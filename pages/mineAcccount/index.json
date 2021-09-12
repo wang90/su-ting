@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "image-cropper": "../../components/image-cropper/index"
+  },
+  "navigationBarTitleText":"账号设置"
+}

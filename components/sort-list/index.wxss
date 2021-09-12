@@ -1,0 +1,61 @@
+/* components/recommend-list/index.wxss */
+/* 同城*/
+.sametown-title {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  padding: 16px 0;
+  color: #333333;
+}
+.sametown-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+.sametown-list .item {
+  flex: 0 0 49%;
+  min-width: 0;
+}
+.sametown-list .item .image {
+  height: 124px;
+  background: #FFFFFF;
+  border-radius: 8px 8px 0px 0px;
+  min-width: 0;
+  /* background-color: red; */
+  width: 100%;
+}
+.sametown-list .item .image image {
+  border-radius: 8px 8px 0px 0px;
+  width: 100%;
+  height: 100%;
+}
+.sametown-list .item .info  {
+  padding: 16px 12px 17px;
+  background: #F7F7F7;
+  border-radius: 0px 0px 8px 8px;
+}
+.sametown-list .item .info .title{
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.sametown-list .item .info .des {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  margin-bottom:8px;
+}
+.sametown-list .item .info .money {
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FF0011;
+}

@@ -1,0 +1,27 @@
+<!--pages/houselist/index.wxml-->
+<navigation-bar></navigation-bar>
+<house-type
+  city="{{ city }}"
+  timer="{{timer}}"
+  typeid="{{ typeid }}"
+  bind:update="update"></house-type>
+<view class="house-list">
+  <view wx-if="{{ list.length === 0 }}" 
+    class="null-message">{{ msg_title }}</view>
+  <house-item 
+    wx:for="{{ list }}" 
+    data-index="index"
+    wx:for-item="item"
+    wx:for-index="index"
+    wx:key="index"
+    furnishArray="{{ item.furnishArray || []}}"
+    houseid="{{ item.housResoId }}" 
+    image="{{ item.imgsrc }}"
+    collect="{{ item.isType}}"
+    huxing="{{ item.huxing }}"
+    kzrs="{{ item.kzrs }}"
+    title="{{ item.title }}"
+    money="{{ item.customMoney }}"
+    comments="{{ item.commentNumb }}"
+  ></house-item>
+</view>

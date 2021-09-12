@@ -1,0 +1,35 @@
+<!--pages/datepage/index.wxml-->
+<navigation-bar title="选择入住日期"></navigation-bar>
+<view class="entry-house-box">
+    <view class="date-card start">
+      <view class="title">入住日期</view>
+      <view class="date">{{ start }}</view>
+    </view>
+    <view class="during">
+      <view>共{{ days }}晚</view>
+    </view>
+    <view class="date-card end">
+        <view class="title">退房日期</view>
+        <view class="date">{{ end }}</view>
+    </view>
+</view>
+<view class="date-list">
+    <van-calendar
+        type="range"
+        bind:close="onClose"
+        bind:confirm="onConfirm"
+        poppable="{{ false }}"
+        show-mark="{{ false }}"
+        color="#0092F6"
+        show-title="{{ false }}"
+        show-confirm="{{ false }}"
+        show-subtitle="{{ false }}"
+        default-date="{{ defaultDate }}"
+        formatter="{{ formatter }}"
+    />
+</view>
+<view class="date-button-list">
+    <view class="clear" bindtap="clear">清空日期</view>
+    <view class="save"
+        bindtap="save">保存日期</view>
+</view>

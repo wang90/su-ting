@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "image-cropper": "../../components/image-cropper/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index"
+  }
+}

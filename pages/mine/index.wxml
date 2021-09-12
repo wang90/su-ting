@@ -1,0 +1,79 @@
+<!--pages/mine/index.wxml-->
+<view class="mine">
+  <view class="mine-card" style="height:{{ 128 + statusBar-customBar - 1}}px">
+      <image class="background"  src="../../assets/mine-background.png"></image>
+      <!-- <view class="mine-title">我的</view> -->
+      <view class="user"
+        wx:if="{{ isLogin == true }}" 
+        data-pageid="account" 
+        bindtap="toPage">
+        <image class="image" src="{{ avatar }}"></image>
+        <text>{{ nickname }}</text>
+        <image class='icon' src="../../assets/white-icon.png"></image>
+      </view>
+      <view wx:else 
+        class="user" 
+        bindtap="toLogin">
+        <image class="image" 
+          src="../../assets/mine-login-icon.png"></image>
+        <text>注册或登录</text>
+      </view>
+  </view>
+
+  <view class="mine-list list-card">
+    <view class="mine-item" 
+      data-pageid ="special" 
+      bindtap="toPage">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-special-icon.png"></image>
+        <text>我的优惠券</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+    <view class="mine-item" data-pageid ="collect" bindtap="toPage">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-collect-icon.png"></image>
+        <text>我的收藏</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+    <view class="mine-item" data-pageid ="authon" bindtap="toPage">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-authon-icon.png"></image>
+        <text>实名认证</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+    <view class="mine-item" data-pageid ="person" bindtap="toPage">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-contactPerson-icon.png"></image>
+        <text>常用入住人</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+    <view class="mine-item" data-pageid ="customer" bindtap="toPage">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-customer-icon.png"></image>
+        <text>联系客服</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+  </view>
+  <view class="mine-list" data-pageid ="landlord" bindtap="toPage">
+    <view class="mine-item">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-landlord-icon.png"></image>
+        <text>成为房东</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+    <view class="mine-item" data-pageid ="feed" bindtap="toPage">
+      <view class="title">
+        <image class="icon" src="../../assets/mine-feed-icon.png"></image>
+        <text>意见反馈</text>
+      </view>
+      <image class="icon" src="../../assets/mine-more-icon.png"></image>
+    </view>
+  </view>
+  <customer-call show="{{ showCall }}"></customer-call>
+</view>

@@ -1,0 +1,32 @@
+<navigation-bar title="{{title}}"></navigation-bar>
+<view class="common-page">
+  <view class="score-box">
+    <view class="title">
+      <text class="score"> {{ level }}</text>
+      <text class="des">总体评分</text>
+    </view>
+    <van-rate
+      color="#ffd21e"
+      void-color="#eee" 
+      value="{{ level }}" />
+  </view>
+  <view class="common-list">
+    <common-item 
+      class="item"
+      wx:for="{{ list }}"
+      wx:for-item="comment"
+      wx:for-index="index"
+      wx:key="index"        
+      imgsrc="{{ comment.imgsrc }}" 
+      name="{{  comment.name  }}"
+      timer="{{ comment.createtime }}"
+      level="{{ comment.commentLevel }}"
+      contents="{{ comment.contents }}"></common-item>
+  </view>
+</view>
+
+<to-payfor-button
+  money ="{{customMoney}}"
+  special="{{ special }}"  
+  oldmoney="{{ datePrice }}"
+  houseid="{{ houseid }}"></to-payfor-button>

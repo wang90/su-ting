@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "platform-explain-info": "../../components/platform-explain-info/index"
+  },
+  "navigationBarTitleText":"登录/注册"
+}

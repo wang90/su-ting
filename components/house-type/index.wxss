@@ -1,0 +1,207 @@
+/* components/house-type/index.wxss */
+.van-tabs__line {
+  display: none;
+}
+.choose-overlay {
+  position: fixed;
+  left: 0 ;
+  right: 0;
+  top: 0 ;
+  bottom: 0;
+  background: #000;
+  opacity: 0.6;
+  z-index: 500;
+}
+.choose-box {
+  padding: 0 16px 16px;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #fff;
+}
+.important-msg,
+.selection-msg {
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.important-msg {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.important-msg  .title {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-right: 12px;
+}
+.important-msg  .city,
+.important-msg  .time {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #0092F6;
+}
+.important-msg  .location,
+.important-msg  .timer{
+  display: flex;
+  align-items: center;
+}
+.important-msg  .location {
+  min-width:  110px;
+}
+
+.important-msg .tips,
+.selection-box .tips {
+  width: 24px;
+  height: 24px;
+}
+
+
+.selection-box .title {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.selection-box .block {
+  margin-bottom: 12px
+}
+.selection-box .content {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+.selection-box .button-list {
+  display: flex;
+  justify-content: space-between;
+  padding-top:8px;
+}
+.selection-box .button-list .reset-button {
+  width: 110px;
+  height: 33px;
+  background: #F4F4F4;
+  border-radius: 100px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  text-align: center;
+  line-height:33px;
+}
+.selection-box .button-list .relust-button {
+  width: 225px;
+  height: 33px;
+  background: #0092F6;
+  border-radius: 100px;
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 33px;
+}
+
+.selection-box .people-range {
+  position: relative;
+  padding-top: 20px;
+}
+.selection-box .people-range .rule{
+  position: absolute;
+  top: 0;
+}
+.selection-box .range.people-range .rule > text::after{
+  bottom: -15px;
+} 
+.selection-box .text {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+/* 滑动样式修改 */
+.selection-box .range .rule {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+.selection-box .range .rule > text {
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #666666;
+  position: relative;
+  transition: all 0.4s;
+}
+.selection-box .range .rule > text:first-child::after{
+  transform: translateX(-100%);
+}
+.selection-box .range .rule > text:last-child::after {
+  transform: translateX(100%);
+}
+.selection-box .range .rule > text::after {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 10px;
+  background: #999999;
+  content:'';
+  bottom: -30px;
+  transition: all 0.4s;
+}
+.selection-box .range .rule > text.active {
+  color: #0092F6;
+}
+.selection-box .range .rule > text.active::after{
+  background: #0092F6;
+}
+.selection-box  .range .slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.selection-box .range.money-range {
+  width: 100%;
+  margin-bottom:12px;
+  padding-top: 25px;
+  position: relative;
+  /* overflow: hidden; */
+}
+.selection-box .range.money-range .rule > text {
+}
+.selection-box .range.money-range .rule {
+    height: 50px;
+    padding: 0 13px;
+    position: absolute;
+    top: -14px;
+}
+.selection-box .range.money-range .rule > text .tips {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  top: 10px;
+  font-size: 10px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #666666;
+}
+.selection-box .range.money-range .rule > text::after {
+  bottom:0;
+}
+
+
+

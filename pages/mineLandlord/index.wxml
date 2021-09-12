@@ -1,0 +1,58 @@
+<!--pages/messageQustion/index.wxml-->
+<navigation-bar title="成为房东"></navigation-bar>
+<view class="message">
+   <view class="card card-input">
+    <van-field
+      value="{{ title }}"
+      class="title"
+      label=""
+      placeholder="请输入房源标题"
+      bind:change="onChangeTitle"
+   />
+   </view>
+   <view class="card card-input">
+    <van-field
+      value="{{ address }}"
+      class="title"
+      label=""
+      placeholder="请输入房源地址"
+      bind:change="onChangeAddress"
+   />
+   </view>
+   <view class="card card-input">
+    <van-field
+      value="{{ phone }}"
+      class="title"
+      label=""
+      placeholder="请输入手机号码"
+      bind:change="onChangePhone"
+   />
+   </view>
+   <view class="card card-input">
+    <van-field
+      value="{{ persion }}"
+      class="title"
+      label=""
+      placeholder="请输入联系人姓名"
+      bind:change="onChangePersion"
+   />
+   </view>
+
+   <view class="card card-input">
+    <van-field
+      class="textare"
+      value="{{ message }}"
+      label=""
+      type="textarea"
+      placeholder="请简单描述房源情况"
+      autosize="{{autosize}}"
+      border="{{ false }}"
+      maxlength="{{500}}"
+      show-word-limit="{{ true }}"
+      bind:change="onChangeVal"
+    />
+   </view>
+   <view class="card">
+     <view class="button {{active? 'active': ''}}" bindtap="sumit">提交</view>
+   </view>
+</view>

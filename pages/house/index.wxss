@@ -1,0 +1,409 @@
+/* pages/house/index.wxss */
+page::after{
+  background-color: #fff;
+}
+
+/* 公用部分 */
+.house-message {
+  padding: 0 16px 20px;
+  border-bottom: 10px solid#F7F7F7;
+}
+.house-message .card-title {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  padding: 16px 0;
+  color: #333333;
+}
+.house-info-list {
+  /* padding-top: 16px; */
+  padding-bottom: 20px;
+}
+.house-info-list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.house-info-list .item .title {
+  /* width: 42px; */
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  white-space: nowrap;
+  margin-right: 16px;
+}
+.house-info-list .item .info {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+/* 顶部图片信息 */
+.house-info {
+  /* position: relative; */
+}
+.house-info .house-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+.house-info .house-image swiper {
+  width: 100%;
+  height: 100%;
+}
+.house-info .house-image swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 操作的功能按钮 */
+.house-action-box {
+  position: relative;
+}
+.house-action-box .action-list {
+  position: absolute;
+  display: flex;
+  top: 256px;
+  right: 0px;
+  padding-right: 16px;
+  overflow: hidden;
+}
+.house-action-box .action-list  >  view {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 7px -5px rgba(0, 0, 0, 0.1);
+  margin-left: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.house-action-box .action-list > view.collect {
+
+}
+.house-action-box .action-list > view.collect.active {
+  padding: 10px;
+}
+.house-action-box .action-list  >  view image { 
+  width: 100%;
+  height: 100%;
+}
+.house-action-box .action-list  >  view.share {
+    position: relative;
+}
+.house-action-box .action-list  >  view.share .button {
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom:0;
+  left: 0;
+  opacity: 0;
+}
+
+/* 顶部房屋信息 */
+.house-title {  
+  font-size: 18px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8px;
+  padding-top:16px;
+}
+.house-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.house-tags .item {
+  background: rgba(0, 146, 246, 0.1);
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400; 
+  color: #0092F6;
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+.house-cards {
+  display: flex;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.house-cards .item {
+  flex: 0 0 49%;
+  /* background: rgba(0, 146, 246, 0.03); */
+  background: rgba(0, 146, 246, 0.03); 
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding-left:16px;
+  height: 68px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+.house-cards .item  .image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; 
+}
+.house-cards .item  .image image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.house-cards .item .info {
+  padding-left: 12px;
+}
+.house-cards .item  .title {
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.house-cards .item  .descrtion {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+
+.house-map {
+  height: 70px;
+  background: gray;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.house-map-tips {
+  position: absolute;
+  font-size: 14px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  left: 0;
+  top: 0 ;
+  width: 73px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  line-height: 28px;
+}
+.house-date-card {
+  background: #0092F6;
+  border-radius: 8px 8px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.house-date-card  .house-date-box {
+  display: flex;
+  height: 54px;
+  align-items: center;
+  justify-content: space-between;
+} 
+.house-date-card  .house-date-box.date-null {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+.house-date-card  .house-date-box  .house-date {
+  display: flex;
+}
+.house-date-card  .house-date-box  .house-date  .date-card .date {
+  font-size: 16px;
+  font-family: DINPro-Black, DINPro;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-right: 4px;
+}
+.house-date-card  .house-date-box  .house-date  .date-card .des {
+  font-size: 10px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.house-date-card  .house-date-box   .date-during {
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  width: 40px;
+}
+
+.house-special {
+  display: flex;
+  align-items: center;
+  height:54px;
+  border-radius: 0 0 8px 8px;
+  justify-content: space-between;
+  padding: 0 16px;
+  border: 1px solid #EFEFEF;
+  border-top: none;
+}
+.house-special  .special-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.house-special  .special-info .title {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  margin-right: 10px;
+}
+.house-special  .special-info .spcial-list {
+  display: flex;
+}
+.house-special  .special-info .spcial-list .item {
+  font-size: 10px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(160deg, #FF5B00 0%, #FF0011 100%);
+  border-radius: 4px;
+  margin-right: 8px;
+  padding: 3px 5px;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.house-special   .special-more {
+  width:  50px;
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FF0011;
+}
+/* 出租具体信息 */
+.house-info-list.house-description-list{
+  border-bottom: 1px solid #EFEFEF;
+}
+.house-info-list.house-description-list .item .title {
+  width: 42px;
+}
+.house-info-list.house-description-list .item.description {
+  align-items: flex-start;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.house-info-list.house-description-list .item.description.auto {
+  height: auto;
+}
+.house-info-list.house-description-list .item.description .info .button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  background-color: #FFFFFF;
+  padding-left:5px;
+}
+
+.house-type-list {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #EFEFEF;
+  justify-content: flex-start;
+  padding: 16px 0;
+}
+.house-type-list .item {
+  width: 20%;
+  text-align: center;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+.house-type-list .item  .icon {
+  width:32px;
+  height: 32px;
+  margin-bottom: 10px;
+}
+.house-type-list .item  .icon image{
+  width: 100%;
+  height: 100%;
+}
+
+.house-info-list.house-other-list .item .title {
+  width: 70px;
+}
+.house-info-list.house-other-list .item .info.link {
+  color: #0092F6;
+}
+
+/* 评论特殊情况  */
+.talk-model {
+  position: relative;
+}
+.talk-model .talk-button{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  right:  0;
+  top: 25px;
+}
+.talk-model .talk-button image{
+    width: 24px;
+    height: 24px;
+}
+
+/* 弹出框的标签 */
+.discount-popup {
+  padding-bottom: 85px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.discount-title {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  padding-top:16px;
+  padding-bottom:12px;
+}
+.discount-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.discount-list .item {
+  font-size: 10px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(160deg, #FF5B00 0%, #FF0011 100%);
+  border-radius: 4px;
+  margin-right: 8px;
+  padding: 3px 5px;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+/* 站位 */
+.house-item-bottom {
+  height: 100px;
+}
+

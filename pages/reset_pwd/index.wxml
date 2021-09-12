@@ -1,0 +1,28 @@
+<!--pages/reset_pwd/index.wxml-->
+<navigation-bar title="设置密码"></navigation-bar>
+<view class="login-page">
+  <view class="title">设置密码</view>
+  <view class="input-list">
+    <view class="item">
+      <van-field
+        value="{{ password }}"
+        type="password"
+        label="密码"
+        input-align="right"
+        placeholder="请输入密码"
+        border="{{ false }}" />
+    </view>
+    <view class="item">
+      <van-field
+        value="{{ password1 }}"
+        type="password"
+        label="确认密码"
+        input-align="right"
+        placeholder="再次确认密码"
+        border="{{ false }}" />
+    </view>
+    <view class="item">
+      <view class="button" bindtap="reset">确定</view>
+    </view>
+  </view>
+</view>

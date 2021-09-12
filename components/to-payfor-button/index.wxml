@@ -1,0 +1,24 @@
+  <view class="pay-for-button">
+    <view class="pay-for-info">
+      <view class="info-speed">
+        <view class="money">
+          <text class="cur">￥{{ money }}</text>
+          <text class="uniy">/晚</text>
+        </view>
+        <view class="des" wx:if="{{ oldmoney }}">￥{{ oldmoney }}</view>
+      </view>
+      <view class="special" wx:if="{{ special }}">{{ special }}</view>
+    </view>
+    <view class="pay-other">
+      <view class="call-phone" bindtap="chooseCall">
+        <view class="icon">
+          <image model="widthFix" src="../../assets/house-phone-icon.png"></image>
+        </view>
+        <view>客服</view>
+      </view>
+      <view class="ord-button"  
+        wx:if="{{ bookInfo === false }}" bindtap="toOrder">立即预定</view>
+      <view class="ord-button" wx:else bindtap="toPageOrder">已预定</view>
+    </view>
+  </view>
+  <customer-call show="{{ showCall }}"></customer-call>

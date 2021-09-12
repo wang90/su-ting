@@ -1,0 +1,176 @@
+<view class="choose-box" style="top:{{ 44 + statusBar-customBar -23 - 1}}px">
+  <view class="important-msg">
+    <view class="location" bindtap="toCity">
+      <text class="title">地点</text>
+      <text class="city">{{ city }}</text>
+      <image class="tips" src="../../assets/tips-active-icon.png"></image>
+    </view>
+    <view class="timer" bindtap="toTimer">
+      <text class="title">入住时间</text>
+      <text class="time" 
+        >{{ timer }}</text>
+      <image class="tips" src="../../assets/tips-active-icon.png"></image>
+    </view>
+  </view>
+  <van-tabs
+    class="selection-box"
+    title-active-color="#0092F6" 
+    border="{{ false }}"
+    active="{{ active }}"
+    bind:click="onChange">
+    <van-tab 
+      title="{{ sortTitle }}"
+      class="{{ sortTips ? 'current' : ''}} "
+      title-style="{{ sortTips ? 'color:#0092F6' : ''}}"
+      name="sort">
+      <view wx:if="{{ show }}">
+        <list-button 
+          key="sort"
+          __class="button"
+          list="{{ sortdata }}"
+          bind:update='__update'>
+        </list-button>
+      </view>
+    </van-tab>
+    <van-tab 
+      title="价格范围" 
+      title-style="{{ moneyTips ? 'color:#0092F6' : ''}}"
+      name="money">
+      <view wx:if="{{ show }}">
+        <view class="block">
+          <text class="title">价格范围 </text>
+          <text class="text" 
+            wx:if="{{!lowMoney&&!hightMoney}}">未选择</text>
+          <text class="text" 
+            wx:elif="{{lowMoney === hightMoney && lowMoney !== 0}}">{{ hightMoney }}</text>
+          <text class="text" wx:else>￥{{ lowMoney }}-￥{{ hightMoney }}</text>
+        </view>
+        <view class="range money-range">
+          <view class="rule">
+            <text wx:for="{{ moneySlder }}" 
+              wx:key="index"
+              wx:for-index="index"
+              wx:for-item="item">
+              <text class="tips">{{ item }}</text>  
+            </text>
+          </view>
+          <view class="slider">
+            <zy-slider 
+              id="zy-slider"
+              minValue="{{ __lowMoney }}" 
+              maxValue="{{ __hightMoney }}" 
+              min="0" max="10" 
+              bind:lowValueChange="lowValueChangeAction"
+              bind:heighValueChange="heighValueChangeAction" />
+          </view>
+        </view>
+        <view class="title block">常用范围</view>
+        <list-button 
+          key="money"
+          __class="button"
+          type="multiple"
+          list="{{ moneydata }}"
+          bind:update='__update'>
+        </list-button>
+        <view class="button-list">
+          <view class="reset-button" 
+            data-type='money'  
+            bindtap="clearType">重制筛选</view>
+          <view 
+            class="relust-button"
+            data-type='money'  
+            bindtap="relust">显示结果</view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab 
+      title="房源类型" 
+      title-style="{{ houseTips ? 'color:#0092F6' : ''}}"
+      name="housetype">
+      <view wx:if="{{ show }}">
+        <list-button 
+          key="housetype"
+          type="multiple"
+          __class="button"
+          list="{{ housetypedata }}"
+          bind:update='__update'>
+        </list-button>  
+        <view class="button-list">
+          <view class="reset-button" 
+            data-type='housetype'  
+            bindtap="clearType">重制筛选</view>
+          <view 
+            class="relust-button"
+            data-type='housetype'  
+            bindtap="relust">显示结果</view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab 
+      title="更多筛选{{moreIndex}}" 
+      title-style="{{ moreTips ? 'color:#0092F6' : ''}}"
+      name="more">
+      <view class="content" wx:if="{{ show }}">
+        <view class="title block">出租方式</view>
+        <list-button 
+          key="rent"
+          type="multiple"
+          __class="button"
+          list="{{ rentdata }}"
+          bind:update='__update'>
+        </list-button>  
+        <view class="block people-range">
+          <text class="title">人数</text>
+          <text class="text">{{ lowPeople }}-{{ hightPeople}}人</text>
+        </view>
+        <view class="block range people-range">
+          <view class="rule">
+            <!-- class="{{ curpeople >= item ? 'active': ''}}" -->
+            <text wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" 
+              wx:key="index"
+              wx:for-index="index"
+              wx:for-item="item">{{ item }}</text>
+          </view>
+          <zy-slider 
+              id="zy-slider1"
+              minValue="{{lowPeople}}" 
+              maxValue="{{ hightPeople }}" 
+              min="0" max="10" 
+              bind:lowValueChange="lowPeopleChangeAction"
+              bind:heighValueChange="heighPeopleChangeAction" />
+          <!-- <van-slider 
+            value="10" 
+            step="10" 
+            bind:drag="onDragPeople"/> -->
+        </view>
+        <view class="title block">户型</view>
+        <list-button 
+          key="unit"
+          type="multiple"
+          __class="button"
+          list="{{ unitdata }}"
+          bind:update='__update'>
+        </list-button>  
+        <view class="title block">便利设施</view>
+        <list-button 
+          key="easy"
+          type="multiple"
+          __class="card-button"
+          list="{{ easydata }}"
+          bind:update='__update'>
+        </list-button>  
+        <view class="button-list">
+          <view class="reset-button" 
+            data-type='more'  
+            bindtap="clearType">重制筛选</view>
+          <view 
+            class="relust-button"
+            data-type='more'  
+            bindtap="relust">显示结果</view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+<view class="choose-overlay" 
+  bindtap="closeOverlay" wx:if="{{ show }}"></view>

@@ -1,0 +1,37 @@
+<!--pages/collect/index.wxml-->
+<navigation-bar title="收藏"></navigation-bar>
+<view class="collect-null" wx:if="{{ list.length == 0 }}">
+  <view class="image">
+    <image class="" src="../../assets/collect-null.png"></image>
+  </view>
+  <view class="description">在房源详情中点击心形图标，即可收藏你心仪的房源哦</view>
+  <view class="button" bindtap="toSearch">开始探索</view>
+</view>
+<view class="collect-list" 
+  wx:if="{{ list.length > 0 }}">
+  <view class="title">收藏房源</view>
+  <view class="list">
+    <house-item 
+
+      wx:for="{{ list }}" 
+      data-index="index"
+      wx:for-item="item"
+      wx:for-index="index"
+      wx:key="index"
+      houseid="{{ item.housResoId }}" 
+      image="{{ item.imgsrc }}"
+      collect="{{ item.isType}}"
+      huxing="{{ item.huxing }}"
+      kzrs="{{ item.kzrs }}"
+      title="{{ item.title }}"
+      money="{{ item.customMoney }}"
+      comments="{{ item.commentNumb }}"
+      bind:update = "update"
+  ></house-item>
+  </view>
+</view>
+<view class="sort-content" hidden="{{ !showSort }}">
+  <sort-list
+    title="推荐房源"></sort-list>
+</view>
+

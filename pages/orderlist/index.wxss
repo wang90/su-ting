@@ -1,0 +1,185 @@
+/* pages/orderlist/index.wxss */
+/* 重制插件样式*/
+.van-tabs__line {
+  display: none;
+}
+.list {
+  padding: 16px;
+}
+.list .null-message {
+  padding-top: 50px;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
+.list .card {
+  position: relative;
+  margin-bottom: 16px;
+}
+.list .card  .card-timer {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 146, 246, 0.1);
+    border-radius: 8px 8px 0px 0px;
+    padding: 6px 16px;
+}
+.list .card  .card-timer  {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+}
+.list .card .card-timer .count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list .card .card-timer .down-count-box {
+  padding-left: 12px;
+}
+.list .card .card-timer .down-count-box > text {
+  width: 21px;
+  height: 21px;
+  line-height: 21px;
+  text-align: center;
+  background: #0092F6;
+  border-radius: 4px;
+  display: inline-block;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-right: 12px;
+  position: relative;
+}
+.list .card .card-timer .down-count-box > text::after {
+  position: absolute;
+  content: ':';
+  right: -6px;
+  font-size:12px;
+  color: #0092F6;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.list .card .card-timer .down-count-box > text:last-child::after {
+  display: block;
+}
+.list .card .card-info {
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  padding: 12px 16px;
+}
+.list .card .card-info .title {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8px;
+  display: flex;
+}
+.list .card .card-info .title .h1 {
+  flex:1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list .card .card-info .title .title-tips {
+  background: rgba(0, 146, 246, 0.1);
+  border-radius: 11px;
+  width: 60px;
+  height: 22px;
+  color: #0092F6;
+  line-height: 22px;
+  text-align: center;
+}
+.list .card .card-info .title .title-tips.success {
+  color:#18CF14;
+  background-color:rgba(24, 207, 20, 0.1)
+}
+.list .card .card-info .title .title-tips.fail {
+  background-color: rgba(153, 153, 153, 0.1);
+  color:  #999999;
+}
+.list .card .card-info .timer {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  margin-bottom: 12px;
+}
+.list .card .card-info .timer > text {
+  margin-right: 8px;
+}
+.list .card .card-info .money {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.list .card .card-button {
+  width: 96px;  
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #0092F6;
+  border-radius: 16px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.finished-card {
+ padding: 16px; 
+ background: #FFFFFF;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.finished-card .status {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background:   rgba(0, 146, 246, 0.1);
+  color: #0092F6;
+  border-radius: 11px;
+  width: 60px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+  font-size: 12px;
+font-family: PingFangSC-Regular, PingFang SC;
+font-weight: 400;
+}
+.finished-card .status.success {
+  background-color: rgba(24, 207, 20, 0.1);
+  color: #18CF14;
+}
+.finished-card .status.fail {
+  color: #999999;
+  background-color: rgba(153, 153, 153, 0.1);
+}
+.finished-card .title {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+.finished-card .timer{
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  margin-bottom: 12px;
+}
+.finished-card .money {
+  font-size: 14px;
+font-family: PingFangSC-Semibold, PingFang SC;
+font-weight: 600;
+color: #333333;
+}

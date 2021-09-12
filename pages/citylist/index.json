@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-index-bar": "@vant/weapp/index-bar/index",
+    "van-index-anchor": "@vant/weapp/index-anchor/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-search": "@vant/weapp/search/index"
+  },
+  "navigationBarTitleText":"速庭"
+}

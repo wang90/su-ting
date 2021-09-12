@@ -1,0 +1,79 @@
+/* pages/login/index.wxss */
+page::after {
+  background: #fff;
+}
+.login-page {
+  padding: 16px 16px 0; 
+}
+.login-page .image {
+  height: 240px;
+  width: 100%;
+  /* background: red; */
+}
+
+.login-page .login-list {
+  padding-top: 43px;
+  padding-left:25px;
+  padding-right: 25px;
+}
+.login-page .login-list .wx-login button {
+  height: 42px;
+  background: #05D067;
+  border-radius: 21px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 42px;
+  margin-bottom: 8px;
+}
+.login-page .login-list .phone-login button {
+  padding-top: 8px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+  background-color: #fff;
+  border: none;
+}
+.login-page .login-list .phone-login button::after{
+  display: none;
+}
+.login-page  .agreement {
+    position: fixed;
+    bottom: 58px;
+    left: 36px; 
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+.login-page  .agreement  > text.url {
+  color: #0092F6;
+}
+.login-page  .agreement > text.button {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #333333;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.login-page .agreement.active > text.button {
+  border-color: #0092F6;
+  position: relative;
+}
+.login-page .agreement.active > text.button:after {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #0092F6;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

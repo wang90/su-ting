@@ -1,0 +1,137 @@
+<!--pages/message/index.wxml-->
+<navigation-bar
+  left="none" 
+  title="订单"></navigation-bar>
+<view class="order-page">
+  <van-tabs
+    active="{{ active }}" 
+    color = "#0092F6" 
+    title-active-color="#0092F6"
+    border="{{ false }}"
+    bind:change="onChange">
+    <van-tab title="进行中订单">
+      <view class="list">
+        <view wx-if="{{ pendingList.length === 0 }}" 
+          class="null-message">{{ message_pending }}</view>
+        <view class="card" 
+          wx:for="{{ pendingList }}"
+          wx:for-index="index"
+          wx:for-item="item"
+          wx:key="index"
+          data-orderid="{{ item.orderId }}"
+          bindtap="toOrderPage"
+        >
+          <!-- <view class="card-timer" wx:if="{{ item.orderState == 2 }}">
+            <view class="count">
+              <text></text>
+              <view class="down-count-box">
+                <text>29</text>
+                <text>29</text>
+                <text>29</text>
+              </view>
+            </view>
+            <view>待支付</view>
+          </view> -->
+          <view class="card-info">
+            <view class="title">
+              <text class="h1">{{ item.title }}</text>
+              <text class="title-tips" 
+              wx:if="{{ item.orderState == 3 }}">待入住</text>
+            </view>
+            <view class="timer">
+              <text>{{ item.rzsj }}-{{ item.tfsj }}</text>
+              <text>{{ item.__days }}天</text>
+            </view>
+            <view class="money">￥{{ item.orderTotal }}</view>
+          </view>
+          <payfor-button 
+          class="card-button"
+          orderid="{{ item.orderId }}"
+          data-orderid="{{ item.orderId }}"
+          wx:if="{{ item.orderState == 2 }}">
+          立即支付
+          </payfor-button>
+          <checkout-pwd 
+          class="card-button"
+          wx:if="{{ item.orderState == 3 || item.orderState == 5 }}"
+          orderid="{{ item.orderId }}"
+          data-orderid="{{ item.orderId }}">
+            查看门锁
+          </checkout-pwd>
+          <view class="card-button" 
+            data-orderid="{{ item.orderId }}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 6 }}">
+            待评价
+          </view>
+          <view class="card-button" 
+            data-orderid="{{ item.orderId }}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 7 }}">
+            已失效
+          </view>
+          <view class="card-button" 
+            data-orderid="{{item.orderId}}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 1 }}">
+            审核中
+          </view>
+          <view class="card-button" 
+            data-orderid="{{item.orderId}}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 4 }}">
+            退房审核中
+          </view>
+          <view class="card-button" 
+            data-orderid="{{item.orderId}}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 8 }}">
+            退款-待确认
+          </view>
+          <view class="card-button" 
+            data-orderid="{{item.orderId}}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 9 }}">
+            退款-已确认
+          </view>
+          <view class="card-button" 
+            data-orderid="{{item.orderId}}"
+            bindtap="toOrderPage"
+            wx:if="{{ item.orderState == 10 }}">
+            已经完成
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已完成订单">
+      <view class="list">
+        <view wx-if="{{ finishedList.length === 0 }}" 
+          class="null-message">{{ message_finished }}</view>
+        <view class="finished-card" 
+          wx:for="{{ finishedList }}"
+          wx:for-index="index"
+          wx:for-item="item"
+          data-orderid="{{ item.orderId }}"
+          bindtap="toOrderPage"
+          wx:key="index">
+          <view class="status">
+            <text wx:if="{{ item.orderState === 1 }}">审核中</text>
+            <text wx:elif="{{ item.orderState === 2 }}">待支付</text>
+            <text wx:elif="{{ item.orderState === 3 }}">待入住</text>
+            <text wx:elif="{{ item.orderState === 4 }}">退房-待确认 </text>
+            <text wx:elif="{{ item.orderState === 5 }}">入住中</text>
+            <text wx:elif="{{ item.orderState === 6 }}" class="finished">已完成</text>
+            <text wx:elif="{{ item.orderState === 7 }}" class="fail">已失效</text>
+            <text wx:elif="{{ item.orderState === 8 }}" class="finished">退款-待确认</text>
+            <text wx:elif="{{ item.orderState === 9 }}" class="finished">退款-已确认 </text>
+            <text wx:if="{{ item.orderState === 10 }}" class="finished">已完成</text>
+            <text wx:else>进行中</text>
+          </view>
+          <view class="title">{{ item.title }}</view>
+          <view class="timer">{{ item.rzsj }}-{{ item.tfsj }}</view>
+          <view class="money">￥{{ item.orderTotal }}</view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

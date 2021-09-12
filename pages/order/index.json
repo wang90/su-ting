@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "platform-explain-info": "../../components/platform-explain-info/index",
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "navigationBarTitleText":""
+}

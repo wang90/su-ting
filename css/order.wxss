@@ -1,0 +1,53 @@
+.order-page {
+  background: #F8F8F8;
+  padding: 16px;
+}
+.order-page .card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #F7F7F7;
+  padding: 20px 16px;
+  margin-bottom: 12px;
+}
+.order-page .card .card-title {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom:12px;
+}
+.order-page .card .card-list .card-item {
+  margin-bottom:12px;
+  display: flex;
+  justify-content: space-between;
+}
+.order-page .card .card-list .card-item .title {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+.order-page .card .card-list .card-item .msg {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.order-page .card .card-list .card-item .msg.red {
+  color: #FF0011;
+}
+
+.order-page .card .card-list .card-item .title.em,
+.order-page .card .card-list .card-item .msg.em {
+  font-weight: 600;
+}
+.order-page .card .card-list .card-item .title.big,
+.order-page .card .card-list .card-item .msg.big {
+  font-size:16px;
+}
+.order-page .card .card-line {
+  background: #EFEFEF;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+}

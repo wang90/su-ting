@@ -1,0 +1,243 @@
+<navigation-bar 
+  opacity="{{2}}" background="inherit" title="{{''}}"></navigation-bar>
+<view class="house-item house-action-box">
+  <view class="house-info">
+    <view class="house-image">
+      <swiper 
+        indicator-dots="{{ true }}"
+        autoplay="{{ true }}"
+        interval="{{ 3000 }}" 
+        circular="{{ true }}"
+        duration="{{ 500 }}"
+        indicator-active-color="#fff">
+        <block wx:for="{{ images }}" 
+          wx:for-item="image"
+          wx:for-index="index"
+          wx:key="index">
+          <swiper-item>
+            <image class="image" 
+              src="{{ image.imgsrc }}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- <image src="{{ image }}"></image> -->
+    </view>
+  </view> 
+  <view class="action-list">
+    <view class="collect {{ collected? 'active': ''}}">
+      <collect-button 
+        houseid="{{ houseid }}"
+          collect="{{ collected }}"
+          bind:collectUpdate ="collectUpdate"
+          >
+            <image class="icon" 
+              slot="default" 
+              src="../../assets/house-collection-icon.png"></image>
+            <image class="active-icon" 
+              slot="active" 
+              src="../../assets/house-collection-actve-icon.png"></image>
+        </collect-button>
+      </view>
+      <view class="share" bindtap="share">
+        <image src="../../assets/share-icon.png"></image>
+        <button 
+          class="button"
+          open-type="share" size="mini">分享</button>
+      </view>
+    </view>
+  <view class="house-message">
+    <view class="house-title">{{ title }}</view>
+    <view class="house-tags">
+      <view class="item" 
+        wx:for="{{ furnishArray }}"
+        wx:for-item="item"
+        wx:for-index="index"
+        hidden="{{ index >= 3 }}"
+        wx:key="index">{{ item.title }}</view>
+    </view>
+    <view class="house-cards">
+      <view class="item">
+        <view class="image">
+          <image src="../../assets/house-type-icon.png"></image>
+        </view>
+        <view class="info">
+          <view class="title">{{ cuzutype }}</view>
+          <view class="descrtion">独享整个房源</view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="image">
+          <image src="../../assets/house-home-icon.png"></image>
+        </view>
+        <view class="info">
+          <view class="title">{{ huxing }}</view>
+          <view class="descrtion">可住{{ kzrs }}人</view>
+        </view>
+      </view>
+    </view>
+    <map-card 
+    title= "{{ title }}"
+    latitude="{{ latitude }}"
+    longitude="{{ longitude }}"></map-card>
+    <view class="house-date-card" bindtap="toTimer">
+      <view class="house-date-box" wx:if="{{ start && end}}">
+        <view class="house-date">
+          <view class="date-card start">
+            <text class="date">{{ startTimer }}</text>
+            <text class="des">入住</text>
+          </view>
+          <view class="date-card end">
+            <text class="date">{{ endTimer }}</text>
+            <text class="des">离开</text>
+          </view>
+        </view>
+        <view class="date-during">共{{ days }}晚</view>
+      </view>
+      <view class="house-date-box date-null" wx:else>
+        添加日期
+      </view>
+    </view>
+    <view class="house-special" wx:if="{{ discounts.length > 0 }}">
+        <view class="special-info">
+          <view class="title">促销</view>
+          <view class="spcial-list">
+            <view class="item"             
+            wx:for="{{ discounts }}"
+            wx:key="index"
+            wx:for-index="index"
+            wx:for-item="item"
+            hidden="{{index>2}}">{{ item.discountName }}</view>
+          </view>
+        </view>
+        <view class="special-more" bindtap="toSpecial">更多优惠</view>
+    </view>
+  </view>
+  <view class="house-message">
+    <view class="card-title">房屋简介</view>
+    <view class="house-info-list house-description-list">
+      <view class="item">
+        <view class="title">面 积</view>
+        <view class="info">{{ square }}平米</view>
+      </view>
+      <view class="item">
+        <view class="title">朝 向</view>
+        <view class="info">{{ fwcx }}</view>
+      </view>
+      <view class="item" wx:if="{{ gdtcw > 0}}">
+        <view class="title">卫生间</view>
+        <view class="info">{{ gdtcw }}个独立卫生间</view>
+      </view>
+      <view class="item">
+        <view class="title">卧 室</view>
+        <view class="info">{{ srcs }}张单人床</view>
+      </view>
+      <view class="item description {{ desAuto ? 'auto': '' }}">
+        <view class="title">描 述</view>
+        <view class="info">
+          {{ description }}
+          <text class="button"
+             wx:if="{{description.length>15}}"
+            bindtap="autoDescription">{{
+              desAuto ? '隐藏':'查看详情'
+            }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="card-title">服务设施</view>
+    <view class="house-type-list">
+      <view class="item"
+        wx:for="{{ furnishArray }}"
+        wx:for-item="item"
+        wx:for-index="index"
+        wx:key="index">
+        <view class="icon">
+         <image src="../../amenities-icon/logo_{{ item.icon_code }}.png"></image>
+        </view>
+        <view class="title">{{ item.title }}</view>
+      </view>
+    </view>
+    <view class="card-title">入住须知</view>
+    <view class="house-info-list house-other-list">
+      <view class="item">
+        <view class="title">入住/退房</view>
+        <view class="info">
+          入住日{{ rzsj }}后入住，离店日{{ tfsj }}
+          (以当地城市市区为准)
+        </view>
+      </view>
+      <view class="item">
+        <view class="title">在线押金</view>
+        <view class="info">{{ yajin }}</view>
+      </view>
+      <!-- <view class="item">
+        <view class="title">性别限制</view>
+        <view class="info" wx:if="xzxb==1">仅限男生</view>
+        <view class="info" wx:elif="xzxb==2">仅限女生</view>
+        <view class="info" wx:else>不限制</view>
+      </view> -->
+      <view class="item">
+        <view class="title">是否可退款</view>
+        <view class="info">
+          可退款
+        </view>
+      </view>
+      <view class="item">
+        <view class="title">退订须知</view>
+        <view class="info link" bindtap="showExplan">
+          查看详情
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="house-message talk-model">
+    <view class="talk-button"
+      data-houseid="{{houseid}}" 
+      bindtap="toComment">
+      <text wx:if="{{ comment }}"> {{ comment.commentNumb }}条评论 </text>
+      <text wx:else>暂无评论</text>
+      <image src="../../assets/home-more-icon.png"></image>
+    </view>
+    <view class="card-title" wx:if="{{ comment }}">房客点评</view>
+    <view class="talk-list" wx:if="{{ comment }}">
+      <common-item
+        imgsrc="{{comment.imgsrc}}" 
+        name="{{  comment.name  }}"
+        timer="{{ comment.createtime }}"
+        level="{{comment.commentLevel}}"
+        contents="{{ comment.contents }}"></common-item>
+    </view>
+  </view>
+  <recommend-list
+    title="同城好房" 
+    houseid="{{ houseid }}"></recommend-list>
+</view>
+<!-- 站位 -->
+<view class="house-item-bottom"></view>
+<platform-explain-info show="{{ explanTips }}" type="08"></platform-explain-info>
+<to-payfor-button
+  bookInfo="{{ bookInfo }}"
+  money ="{{ customMoney }}"
+  special="{{ special }}"  
+  oldmoney="{{ datePrice }}"
+  houseid="{{ houseid }}"></to-payfor-button>
+  <van-popup
+  show="{{ discountTips }}"
+  position="bottom"
+  custom-style="height: 50%;"
+  bind:close="onDiscountClose"
+  closeable="{{ true }}"
+  lock-scroll="{{ true }}"
+  safe-area-inset-top="{{ true }}"
+>
+  <view class="discount-popup">
+    <view class="discount-title">促销</view>
+    <view class="discount-list">
+      <view class="item" 
+        wx:for="{{ discounts }}"
+        wx:for-item="item"
+        wx:for-index="index"
+        wx:key="index"
+      >{{ item.discountName }}</view>
+    </view>
+  </view>
+</van-popup>

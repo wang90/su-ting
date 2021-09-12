@@ -1,0 +1,39 @@
+page::after{
+  background-color: #fff;
+}
+.common-page {
+  padding: 20px 16px;
+}
+.score-box {
+  background: linear-gradient(324deg, #6156F4 0%, #00ACF6 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 146, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 65px;
+}
+.score-box .title {
+  display: flex;
+  align-items: center;
+}
+.score-box .title .score{
+  font-size: 24px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.score-box .title .des{
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding-left:13px;
+}
+.common-list{
+  padding-top:20px;
+}
+.common-list .item {
+  margin-bottom: 28px;
+}

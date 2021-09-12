@@ -1,0 +1,41 @@
+<!--pages/contactPerson/index.wxml-->
+<navigation-bar title="常用联系人"></navigation-bar>
+<view class="person-page">
+  <view class="list">
+    <view class="item {{item.active? 'active':''}}" 
+      wx:for="{{ list }}"
+      wx:for-item="item"
+      wx:for-index="index"
+      wx:key="index"
+      data-persionid="{{ item.checkId }}"
+      bindtap="choosePersion">
+      <view class="background"  
+      data-persionid="{{ item.checkId }}"
+      bindtap="editorPersion">
+        <image src="../../assets/content-background-icon.png"></image>
+      </view>
+      <view class="icon" 
+      data-persionid="{{ item.checkId }}"
+      bindtap="editorPersion">
+        <image src="../../assets/persional-edit-icon.png"></image>
+      </view>
+      <view class="title">{{ item.name }}</view>
+      <view class="info code">
+        <text class="info-title">身份证号</text>
+        <text>{{ item.certNo }}</text>
+      </view>
+      <view class="info phone">
+        <text class="info-title">手机号</text>
+        <text>{{ item.phone }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="button-box" wx:if="{{ type==='choose' }}">
+    <view class="button" bindtap="back">确定</view>
+    <view class="add-more" bindtap="addPersion">添加常用入住人</view>
+  </view>
+  <view class="button-box" wx:else>
+    <view class="button" bindtap="addPersion">添加常用入住人</view>
+  </view>
+
+</view>

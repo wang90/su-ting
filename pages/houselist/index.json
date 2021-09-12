@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-slider": "@vant/weapp/slider/index",
+    "house-item": "../../components/house-item/index",
+    "house-type": "../../components/house-type/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index"
+  },
+  "navigationBarTitleText":"速庭"
+}

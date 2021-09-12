@@ -1,0 +1,9 @@
+<!--pages/messageSystem/index.wxml-->
+<view class="message">
+  <view class="title">{{ title }}</view>
+  <view class="city"> 
+    <image src="../../assets/location-icon.png"></image>
+    <text>{{ city }}</text>
+  </view>
+  <view class="value">{{ value }}</view>
+</view>

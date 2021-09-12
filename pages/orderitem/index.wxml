@@ -1,0 +1,255 @@
+<navigation-bar title="订单详情"></navigation-bar>
+<view class="order-page">
+  <!-- 
+  1:订房-待确认  可以取消订单
+  2:待支付  可以取消订单
+  3:待入住  可以退款
+  4:退房-待确认 
+  5:入住中 可以退房
+  6:待评价 
+  7:已失效 
+  8:退款-待确认 可以取消退款
+  9:退款-已确认 
+  10:已完成 -->
+  <view class="order-status" wx:if="{{ orderState === 10 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-finished-icon.png"></image>
+    </view>
+    <view class="info">已完成入住</view>
+  </view>
+  <view class="order-status" wx:if="{{ orderState === 3 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-success-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">订单已支付</view>
+      <view class="description">期待您的入住！</view>
+    </view>
+  </view>
+  <view class="order-status" wx:if="{{ orderState === 2 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-success-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">订单已审核通过</view>
+      <view class="description">立即支付开启旅程吧！</view>
+    </view>
+    <view class="timer">
+      <!-- <view class="timer-des">支付倒计时</view>
+      <view class="timer-box">
+        <text>29</text>
+        <text>29</text>
+        <text>29</text> -->
+      <!-- </view> -->
+    </view>
+  </view>
+  <view class="order-status" wx:if="{{ orderState === 1 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-pending-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">确认订单中</view>
+      <view class="description">请留意推送消息</view>
+    </view>
+  </view>
+  <view class="order-status" wx:if="{{ orderState === 7 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-error-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">订单已失效</view>
+      <view class="description"></view>
+    </view>
+  </view>
+  <view class="order-status" wx:if="{{ orderState === 4 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-pending-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">退房-待确认 </view>
+      <view class="description"></view>
+    </view>
+  </view>
+  <view class="order-status" wx:if="{{  orderState === 8 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-pending-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">退款-待确认</view>
+      <view class="description"></view>
+    </view>
+    <view class="cancel-apply" 
+      bindtap="cancelApply">
+      取消退款
+    </view>
+  </view>
+  <view class="order-status" wx:if="{{ orderState === 9 }}">
+    <view class="icon">
+      <image src="../../assets/order-status-pending-icon.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">订单退款已确认</view>
+      <view class="description"></view>
+    </view>
+  </view>
+  
+  <view class="card card-message">
+    <view class="order-info">
+      <view class="order-info-code" bindtap="copyOrderCode">
+        <text>订单号：</text>
+        <text>{{ orderid }}</text>
+        <image src="../../assets/order-copy-icon.png"></image>
+      </view>
+      <view class="order-info-timer">
+        <text>{{ createDate }}</text>
+        <!-- <text>10:15:15</text> -->
+      </view>
+    </view>
+    <view class="card-title">{{ title }}</view>
+    <view class="msg-date">{{ rzsj }} - {{ tfsj }} 共{{ days }}晚</view>
+    <view class="msg-description">{{ lendTypeName }}·{{ huxing }}</view>
+    <view class="during"></view>
+  </view>
+  <view>
+    <map-card 
+    title= "{{ title }}"
+    latitude="{{ latitude }}"
+    longitude="{{ longitude }}"></map-card>
+  </view>
+  <view class="card card-user">
+    <view class="card-title">入住人信息</view>
+    <view class="card-list"
+      wx:for="{{ checkArray }}"
+      wx:for-index="index"
+      wx:for-item="user"
+      wx:key="index">
+      <view class="card-item">
+        <view class="title">入住人姓名</view>
+        <view class="msg">{{ user.name }}</view>
+      </view>
+      <view class="card-item">
+        <view class="title">手机号</view>
+        <view class="msg">{{ user.phone }}</view>
+      </view>
+    </view>
+    <checkout-pwd
+      wx:if="{{ orderState == 3 || orderState == 5 }}"
+      orderid="{{ orderid }}">
+      <view  class="card-key-button">获取门锁密码</view>
+    </checkout-pwd>
+  </view>
+  <view class="card card-invoice" wx:if="{{ invoice ===null }}">
+    <view class="card-title">发票信息</view>
+    <view class="add-invoice" >未添加</view>
+  </view>
+  <view class="card card-money" wx:else>
+    <view class="card-title">发票类型</view>
+    <view class="">
+      <!-- phone: fpPhone,
+            email: fpEmail,
+            name: fpName,
+            status: fpStatus, // 0：无 1：未开 2：已开 -->
+      <view class="card-item">
+        <text class="title">发票类型</text>
+        <text class="des">{{ invoice.type == 1 ? '个人':'公司'  }}</text>
+      </view>
+      <view class="card-item" wx:if="{{ invoice.phone }}">
+        <text class="title">手机号</text>
+        <text class="des">{{ invoice.phone }}</text>
+      </view>
+      <view class="card-item" wx:if="{{ invoice.email }}">
+        <text class="title">邮箱</text>
+        <text class="des">{{ invoice.email  }}</text>
+      </view>
+      <view class="card-item" wx:if="{{ invoice.name  }}">
+        <text class="title">公司名称</text>
+        <text class="des">{{ invoice.name  }}</text>
+      </view>
+      <view class="card-item" wx:if="{{ invoice.code }}">
+        <text class="title">发票税号</text>
+        <text class="des">{{ invoice.code  }}</text>
+      </view>
+
+      <view class="card-item">
+        <text class="title">发票状态</text>
+        <text class="des" wx:if="{{invoice.status == 1 }}">未开</text>
+        <text class="des" wx:elif="{{invoice.status == 2 }}">已开</text>
+        <text class="des" wx:else>无</text>
+      </view>
+    </view>
+  </view>
+  <view class="card card-money">
+    <view class="card-title">订单金额</view>
+    <view class="">
+      <view class="card-item">
+        <text class="title">总价</text>
+        <text class="des">￥{{ subtotal  }}</text>
+      </view>
+      <view class="card-item">
+        <text class="title">押金</text>
+        <text class="des">￥{{ yajin  }}</text>
+      </view>
+      <view class="card-item">
+        <text class="title">优惠</text>
+        <text class="des">-￥{{ couponMoney  }}</text>
+      </view>
+      <view class="card-item">
+        <text class="title">订单价格</text>
+        <text class="des">￥{{ orderTotal }}</text>
+      </view>
+    </view>
+    <!-- <view 
+          wx:for="{{ moneyDetails }}"
+          wx:for-item="item"
+          wx:for-index="index"
+          wx:key="index">
+        <view class="card-item">
+          <view class="title em">{{ item.key }}</view>
+          <view class="title">￥{{ item.value }}</view>
+        </view>
+        <view class="card-item" 
+          wx:for="{{ item.subDetails }}"
+          wx:for-item="detail"
+          wx:for-index="index"
+          wx:key="index">
+          <view class="title">{{ detail.key }}</view>
+          <view class="msg">{{ detail.value }}</view> 
+        </view>
+      </view> -->
+  </view>
+
+  <view class="action-button"
+    wx:if="{{ orderState === 1 || orderState === 2 }}"
+    bindtap="cancelOrder">取消订单</view>
+  <view class="action-button"
+    wx:if="{{ orderState === 3 }}" 
+    bindtap="toOrderRefund">申请退款</view>
+    <view class="action-button"
+    wx:if="{{ orderState === 5 }}" 
+    bindtap="checkOrderRefundInfo">申请退房</view>
+  <view class="action-button"
+    wx:if="{{ orderState === 7 || orderState === 10}}" 
+    bindtap="toSearch">重新找房</view>
+</view>
+
+
+<view class="pay-for-button" wx:if="{{ orderState === 2 }}">
+    <view class="pay-for-info">
+      <view class="info-speed">
+        <view class="money">
+          <text class="title">总价</text>
+          <text class="cur">￥{{ orderTotal }}</text>
+        </view>
+        <view class="des">已优惠￥{{ couponMoney }}</view>
+      </view>
+    </view>
+    <view class="pay-other">
+      <payfor-button 
+          class="ord-button"
+          orderid="{{ orderid }}"
+          wx:if="{{ orderState == 2 }}">
+          立即支付
+      </payfor-button>
+      <!-- <view class="ord-button" bindtap="toOrder">立即支付</view> -->
+    </view>
+  </view>

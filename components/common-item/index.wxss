@@ -1,0 +1,50 @@
+/* components/common-item/index.wxss */
+.item .talk-title {
+  display: flex;
+  justify-content: space-between;
+}
+ .item .talk-title  .talk-info {
+  display: flex;
+  margin-bottom:12px;
+}
+ .item .talk-title .image {
+  width: 42px;
+  height: 42px; 
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+}
+ .item .talk-title  .talk-info .info {
+  padding-left: 12px;
+}
+ .item .talk-title  .talk-info .info .nickname {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom: 2px;
+}
+ .item .talk-title  .talk-info .info .date{
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+ .item .talk-des {
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  text-align: justify;
+  margin-bottom:16px;
+}
+ .item  .talk-images {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+ .item  .talk-images .item {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  /* background: red; */
+}

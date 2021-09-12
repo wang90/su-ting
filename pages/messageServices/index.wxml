@@ -1,0 +1,32 @@
+<navigation-bar title="描述问题"></navigation-bar>
+<view class="question-value" bindtap="chooseQusetion">
+  问题内容
+</view>
+<view class="list-content">
+  <view class="item" 
+    wx:for="{{ list }}"
+    wx:for-index="index"
+    wx:for-item="item"
+    wx:key="index">
+    <view class="timer">{{ item.createTime }}</view>
+    <view class="value-box {{ item.type == 2 ? 'admin': ''}}">
+      <view class="user">
+        <image class="user" src="{{ item.userPhoto }}"></image>
+      </view>
+      <view class="value">
+        {{ item.content}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class="input-box">
+  <view class="input">
+    <van-field
+    value="{{ value }}"
+    placeholder="在此输入问题"
+    border="{{ false }}"
+    bind:change="onChange"
+    />
+  </view>
+  <view class="send" bindtap="send">发送</view>
+</view>

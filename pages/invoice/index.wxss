@@ -1,0 +1,64 @@
+/* pages/invoice/index.wxss */
+@import '/css/order.wxss';
+
+.order-page .card.invoice-card {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #0092F6;
+  text-align: center;
+  background-color: rgba(0, 146, 246, 0.1);
+  padding: 9px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-page .card.invoice-card image {
+  width: 24px;
+  height: 24px;
+}
+.order-page .card.card-invoice {
+  margin-bottom: 40px;
+}
+
+.order-page .card.card-invoice .van-tabs__line {
+  display:none;
+}
+.order-page .card.card-invoice .van-tab {
+  flex: 0 0 80px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 17px;
+  border: 1px solid #F7F7F7;
+  background: #F7F7F7;
+  color: #666666;
+  transition: all 0.4s;
+  margin-right: 8px;
+}
+.order-page .card.card-invoice .van-tab.van-tab--active {
+  border-color: #0092F6;
+  color: #0092F6;
+}
+.order-page .card.card-invoice van-field {
+  display: block;
+  width: 100%;
+}
+.order-page .card.card-invoice van-field .van-cell {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.save-button {
+  width: 230px;
+  height: 35px;
+  background: #0092F6;
+  border-radius: 18px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 auto;
+  line-height: 35px;
+  text-align: center;
+}

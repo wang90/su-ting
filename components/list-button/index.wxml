@@ -1,0 +1,20 @@
+<view class="list {{ __class === 'button' ? 'button': '' }}">
+  <view 
+    class="item {{ __class }} {{ item.active? 'active': '' }}"
+    wx:for="{{ list }}"
+    wx:for-index="index"
+    wx:for-item="item"
+    wx:key="index"
+    data-index="{{ index }}"
+    bindtap="choose"
+  > 
+    <view class="{{  item.style=='small' ? 'small': '' }}" 
+      wx:if="{{ __class === 'button' }}">{{ item.value }} </view>
+    <view wx:elif="{{ __class==='card-button' }}">
+      <view class="image">
+        <image src="../../amenities-icon/logo_{{item.code}}.png"></image>
+      </view>
+      <view class="text">{{ item.value }} </view>
+    </view>
+  </view>
+</view>

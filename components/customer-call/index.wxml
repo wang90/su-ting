@@ -1,0 +1,11 @@
+<van-popup show="{{ show }}"
+    round
+    bind:close="onCloseCall">
+   <view class="show-call">
+    <view class="title">咨询电话</view>
+    <view class="phone">{{ phone }}</view>
+    <view class="description">我们将会全心全意为您提供满意周到的咨询服务</view>
+    <view class="call-button" bindtap="callPhone">立即拨打</view>
+    <view class="close" bindtap="close">取消</view>
+   </view>
+  </van-popup>

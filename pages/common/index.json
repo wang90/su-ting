@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-rate": "@vant/weapp/rate/index",
+    "common-item": "../../components/common-item/index",
+    "to-payfor-button": "../../components/to-payfor-button/index"
+  }
+}

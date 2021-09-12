@@ -1,0 +1,37 @@
+<navigation-bar title="我的优惠卷"></navigation-bar>
+<view class="order-page">
+  <view class="card invoice-card" 
+    wx:if="{{ type === 'choose' }}" 
+      data-specialid = "{{null}}" 
+      bindtap="chooseSpecial">
+    <image src="../../assets/choose-back-icon.png"></image>不使用优惠券
+  </view>
+  <view class="special-list">
+    <view wx-if="{{ list.length === 0 }}" 
+      class="null-message">{{ msg_title }}</view>
+    <view class="item" 
+      wx:for="{{ list }}"
+      wx:for-index="index"
+      wx:for-item="item"
+      wx:key="index"
+      data-cardid="{{ item.couponId }}"
+      bindtap="choose">
+      <view class="sale">
+        <text class="em">9</text>
+        <text class="tips">折</text>
+      </view>
+      <view class="info">
+        <view class="title">{{ item.couponName }}</view>
+        <view class="warning">{{ item.remark }}</view>
+        <view class="timer">有效期：{{ item.couponStartDate }}-{{ item.couponEndDate }}</view>
+      </view>
+      <view wx:if="{{type === 'choose' && !item.active }}" class="choose"></view>
+      <image wx:if="{{type === 'choose' && item.active }}" class="choose-image"
+        src="../../assets/item-active-icon.png"></image>
+    </view>
+  </view>
+  <view class="finish-button" 
+    wx:if="{{type==='choose' && list.length > 0}}"
+    bindtap="finished"
+  >完成</view>
+</view>

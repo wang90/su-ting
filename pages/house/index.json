@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "collect-button": "../../components/collect-button/index",
+    "map-card": "../../components/map-card/index",
+    "recommend-list": "../../components/recommend-list/index",
+    "common-item": "../../components/common-item/index",
+    "to-payfor-button": "../../components/to-payfor-button/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "platform-explain-info": "../../components/platform-explain-info/index",
+    "van-popup": "@vant/weapp/popup/index"
+  },
+  "navigationBarTitleText": ""
+}

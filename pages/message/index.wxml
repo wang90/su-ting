@@ -1,0 +1,75 @@
+<!--pages/message/index.wxml-->
+<navigation-bar
+  left="none" 
+  title="消息"></navigation-bar>
+<view class="message-page">
+  <van-tabs
+    active="{{ active }}" 
+    color = "#0092F6" 
+    title-active-color="#0092F6"
+    border="{{ false }}"
+    bind:change="onChange">
+    <van-tab title="系统消息">
+      <view class="list">
+        <view class="tips-box" wx-if="{{ sysList.length > 0}}">
+          <view class="icon" bindtap="chooseShow">
+            <image src="../../assets/message-tips-icon.png"></image>
+          </view>
+          <view class="tips-list" wx:if="{{ tips }}">
+            <view class="" data-type="read" bindtap="tipsAction">一键已读</view>
+            <view class="" data-type="clear" bindtap="tipsAction">一键清空</view>
+          </view>
+        </view>
+        <view wx-if="{{ sysList.length === 0 }}" 
+          class="null-message">{{ message_sys }}</view>
+        <view class="message-card" 
+          wx:for-item="item"
+          wx:key="index"
+          wx:for-index="index"
+          data-messageid="{{item.id}}"
+          data-messagetype="{{item.messageType}}"
+          data-messageordid="{{ item.bisOrderNo }}"
+          wx:for="{{ sysList }}"
+          bindtap="chooseMessageCard"
+        >
+          <view class="info">
+            <view class="title {{item.isReady == 2? 'active': '' }}">
+              <text>{{ item.title }}</text>
+            </view>
+            <view class="timer">
+              <text>{{ item.createDate }}</text>
+              <!-- <text>下午5:10</text> -->
+            </view>
+          </view>
+          <view class="description">{{ item.content }}</view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="客服消息">
+      <view class="list">
+        <view wx-if="{{ talkList.length === 0 }}" 
+          class="null-message">{{ message_talk }}</view>
+        <view class="message-card"
+          wx:for-item="item"
+          data-messageid="{{ item.workOrderId }}" 
+          wx:key="index"
+          wx:for-index="index"
+          wx:for="{{ talkList }}"
+          bindtap="chooseTalk">
+          <view class="info">
+            <view class="title">{{ item.title }}</view>
+            <view class="card-status {{item.status == 2?'finished': 'doing'}}">
+              {{ item.status === 2? '已完成':  '处理中'  }}
+            </view>
+          </view>
+          <view class="description">{{item.content}}</view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <view class="message-qusetion"
+    wx:if="{{active === 1 }}"
+    bindtap="toQusetion">
+    描述问题
+  </view>
+</view>

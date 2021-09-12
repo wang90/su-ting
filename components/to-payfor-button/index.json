@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "customer-call": "../../components/customer-call/index"
+  }
+}

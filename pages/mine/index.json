@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "customer-call": "../../components/customer-call/index"
+  },
+  "navigationBarTitleText":"我的"
+}

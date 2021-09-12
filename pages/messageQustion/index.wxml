@@ -1,0 +1,38 @@
+<!--pages/messageQustion/index.wxml-->
+<navigation-bar title="描述问题"></navigation-bar>
+<view class="message">
+   <view class="card">
+    <van-field
+      value="{{ title }}"
+      class="title"
+      label=""
+      placeholder="请输入标题（20字以内"
+      bind:change="onChangeTitle"
+      error-message="{{  title.length > 20 ? '请输入20字以内的标题' :'' }}"
+   />
+   </view>
+   <view class="card">
+    <view class="city">
+      <view class="city-button" 
+        bindtap="toCity">{{ city }}</view>
+    </view>
+   </view>
+   <view class="card">
+    <van-field
+      class="textare"
+      value="{{ message }}"
+      label=""
+      type="textarea"
+      placeholder="请描述你遇到的问题"
+      autosize="{{autosize}}"
+      border="{{ false }}"
+      maxlength="{{500}}"
+      show-word-limit="{{ true }}"
+      error-message="{{ msg && (message.length == 0) ?'请描述问题' :''}}"
+      bind:change="onChangeVal"
+    />
+   </view>
+   <view class="card">
+     <view class="button {{active? 'active': ''}}" bindtap="sumit">提交</view>
+   </view>
+</view>

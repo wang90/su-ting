@@ -1,0 +1,156 @@
+/* pages/message/index.wxss */
+.message-page .null-message {
+  padding-top: 50px;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
+/* 重制插件样式*/
+.van-tabs__line {
+  display: none;
+}
+.tips-box {
+  position: relative;
+  /* top:12px;
+  right:12px; */
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.tips-box  .icon {
+  width: 24px;
+  height: 24px;
+}
+.tips-box  .icon image {
+  width: 100%;
+  height: 100%;
+}
+.tips-box .tips-list {
+  position: absolute;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  top: 24px;
+  right:0;
+  width: 80px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 15px 0px rgba(226, 231, 234, 0.5);
+  border-radius: 8px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.tips-box .tips-list >view {
+  height:44px;
+  line-height: 44px;
+}
+.tips-box .tips-list >view:first-child {
+  border-bottom: 1px solid #999999;
+}
+/* 页面样式 */ 
+.list {
+  padding: 16px 16px 0 ;
+  background: #F8F8F8;
+  position: relative;
+}
+.list .message-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.list .message-card .info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.list .message-card .title {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.list .message-card .title > text {
+  position: relative;
+}
+.list .message-card .title.active > text::after {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #FF0011;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -10px;
+}
+.list .message-card .title.tips::before {
+  position: absolute;
+  right: -10px;
+  width: 6px;
+  height: 6px;
+  background: #FF0011;
+  left: 10px;
+  border-radius: 50%;
+  content: '';
+}
+.list .message-card .timer {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+.list .message-card .card-status {
+  width: 60px;
+  height: 22px;
+  background:  rgba(153, 153, 153, 0.1);
+  border-radius: 11px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  text-align: center;
+  line-height: 22px;
+}
+
+.list .message-card .card-status.finished {
+  background: rgba(24, 207, 20, 0.1);
+  color: #18CF14;
+}
+.list .message-card .description {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+.list .message-card .button {
+  width: 60px;
+  height: 22px;
+  background: rgba(153, 153, 153, 0.1);
+  border-radius: 11px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+.list .message-card .button.success {
+  background: rgba(24, 207, 20, 1);
+  color: #18CF14;
+}
+.message-qusetion {
+  position: fixed;
+  width: 230px;
+  height: 35px;
+  background: #0092F6;
+  border-radius: 18px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+}

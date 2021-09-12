@@ -1,0 +1,82 @@
+.item {
+  background: #FFFFFF;  
+  box-shadow: 0px 0 15px 13px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.item .image {
+  height: 193px;
+  position: relative;
+}
+ .item .image > image {
+  width: 100%;
+  height: 100%;
+}
+ .item .image .collect {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+}
+.item .image .collect image {
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 4px;
+}
+.item .image .collect image.icon {
+  background: #fff;
+}
+.item .image .collect image.active-icon {
+  background: rgba(0, 0, 0, 0.5);
+}
+.item .info {
+  padding: 16px;
+}
+.item .title {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  margin-bottom: 4px;
+}
+.item .name {
+  font-size: 18px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 8px;
+}
+.item .tags {
+  margin-bottom: 12px;
+  display: flex;
+}
+.item .tags .tag {
+  font-size: 10px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  background: rgba(0,146,246,0.1);
+  border-radius: 4px;
+  padding: 3px 5px;
+  margin-right: 8px;
+}
+.item  .more {
+  display: flex;
+  justify-content: space-between;
+}
+.item  .more .speed {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FF0011;
+}
+.item  .more .assess  {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}

@@ -1,0 +1,7 @@
+<!--components/collect-button/index.wxml-->
+<view class="collect {{ collect === 1 ? 'active':''}}" 
+  data-houseid="{{ houseid }}" 
+  bindtap="choose">
+  <slot name="active" wx:if="{{ collect == 1 }}"></slot>
+  <slot name="default"  wx:else></slot>
+</view>

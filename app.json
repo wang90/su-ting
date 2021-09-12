@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/home/index",
+
+    "pages/message/index",
+    "pages/messageQustionHistory/index",
+    "pages/messageServices/index",
+    "pages/messageQustion/index",
+
+    "pages/datepage/index",
+    "pages/citylist/index",
+    
+    "pages/houselist/index",
+    "pages/house/index",
+    "pages/special/index",
+    "pages/invoice/index",
+    "pages/order/index",
+    "pages/orderlist/index",
+    "pages/orderitem/index",
+    "pages/common/index",
+
+    "pages/login/index",
+    "pages/reset_pwd/index",
+    "pages/phone_login/index",
+
+    "pages/mine/index",
+    "pages/mineAcccount/index",
+    "pages/mineLandlord/index",
+    "pages/feed/index",
+    "pages/customer/index",
+    "pages/coupons/index",
+    "pages/contactPerson/index",
+    "pages/contactPersonItem/index",
+    "pages/authon/index",
+
+    "pages/collect/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "速庭",
+    "backgroundColor":"#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor":"#0092F6",
+    "color": "#999999",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "./assets/nav-home-icon.png",
+        "selectedIconPath": "./assets/nav-home-icon-active.png"
+      },
+      {
+        "pagePath": "pages/message/index",
+        "iconPath": "./assets/nav-msg-icon.png",
+        "selectedIconPath": "./assets/nav-msg-icon-active.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/orderlist/index",
+        "iconPath": "./assets/nav-order-icon.png",
+        "selectedIconPath": "./assets/nav-order-icon-active.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "./assets/nav-mine-icon.png",
+        "selectedIconPath": "./assets/nav-mine-icon-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/index"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

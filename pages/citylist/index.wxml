@@ -1,0 +1,75 @@
+<!-- <navigation-bar
+  left="none"
+  opti
+  title="速庭"></navigation-bar> -->
+<navigation-bar title="速庭"></navigation-bar>
+<view class="city-list">
+  <view class="city-search">
+    <van-search
+        value="{{ value }}"
+        placeholder="输入城市名查询"
+        bind:search="onSearch"
+/>
+  </view>
+  <view class="city-my-location">
+    <view class="title">我的位置</view>
+    <view class="description" bindtap="backPage">
+      <image src="../../assets/location-tips-icon.png"></image>
+      <text class="address">{{ location }}</text>
+      <image src="../../assets/location-more.png"></image>
+    </view>
+  </view>
+  <view class='view-hot' wx:if="{{ hots.length > 0 }}">
+    <view class="title">热门城市</view>
+    <view class="hot-city-list">
+      <view class="item" 
+        wx:for="{{ hots }}"
+        wx:for-index="index"
+        wx:key="index"
+        wx:for-item="city"
+        data-type='hot'
+        data-cityid="{{ city.cityId }}" 
+        bindtap="chooseCity">{{ city.cityName }}</view>
+    </view>
+  </view>
+  <view class="view-city-list" wx:if="{{ value === ''}}">
+    <view class="title">城市列表</view>
+    <van-index-bar 
+      index-list="{{ indexList }}">
+      <view wx:for="{{ citys }}"
+        wx:for-index="index"
+        wx:key="index"
+        wx:for-item="initial"
+        data-initial="{{ initial.initial }}" 
+      >
+          <van-index-anchor 
+            index="{{ initial.initial }}">{{ initial.initial }}</van-index-anchor>
+          <van-cell
+            wx:for="{{ initial.list }}" 
+            wx:for-index="index"
+            wx:key="index"
+            wx:for-item="city" 
+            title="{{ city.name }}"
+            data-cityid="{{ city.code_id }}"
+            data-cityname="{{ city.name  }}"
+            data-type='list'
+            bindtap="chooseCity" />
+      </view>
+    </van-index-bar>
+  </view>
+  <view class="view-city-list" wx:else>
+    <view class="title">城市列表</view>
+    <view class="des" 
+      wx:if="{{search.length === 0 && value.length > 0}}">未搜索到相关城市</view>
+    <van-cell
+      wx:for="{{ search }}" 
+      wx:for-index="index"
+      wx:key="index"
+      wx:for-item="city" 
+      title="{{ city.name }}"
+      data-cityid="{{ city.code_id }}"
+      data-cityname="{{ city.name  }}"
+      data-type='search'
+      bindtap="chooseCity" />
+  </view>
+</view>

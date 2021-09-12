@@ -1,0 +1,86 @@
+/* pages/mine/index.wxss */
+.mine {
+  background: #F8F8F8;
+}
+.mine-title {
+  height: 44px;
+}
+.mine-card {
+  height: 152px;
+  position: relative;
+  margin-bottom: 11px;
+}
+.mine-card .background {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mine-card .user {
+  position: absolute;
+  z-index: 1;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 17px;
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  bottom: 20px;
+}
+.mine-card .user .image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right:13px;
+}
+.mine-card .user .icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+}
+
+.mine-list {
+  padding:0 17px;
+  background: #F8F8F8;
+}
+.mine-list.list-card {
+  margin-bottom: 16px;
+}
+
+.mine-list .mine-item:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.mine-list .mine-item:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.mine-list .mine-item {
+  background: #FFFFFF;
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  padding: 15px 16px;
+  display: flex;
+}
+.mine-list .mine-item .title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.mine-list .mine-item .title > text {
+  padding-left: 13px;
+}
+.mine-list .mine-item  .icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex: 0 0 24px;
+}

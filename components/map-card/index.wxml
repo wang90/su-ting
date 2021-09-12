@@ -1,0 +1,20 @@
+<view class="map-box">
+  <view class="tips">地理位置</view>
+  <map
+    class="map"
+    bindtap="toMap"
+    id="map"
+    min-scale="{{minScale}}"
+    max-scale="{{maxScale}}"
+    latitude="{{ latitude }}"
+    longitude="{{ longitude }}"
+    scale="{{scale}}"
+    setting="{{setting}}"
+    enable-zoom="{{ false}}"
+    enable-scroll="{{false}}"
+    enable-overlooking="{{isOverLooking}}"
+    enable-3D="{{is3D}}"
+    show-location="{{true}}"
+>
+  </map>
+</view>

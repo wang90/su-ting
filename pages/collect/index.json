@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "house-item": "../../components/house-item/index",
+    "sort-list": "../../components/sort-list/index"
+  },
+  "navigationBarTitleText":"收藏"
+}

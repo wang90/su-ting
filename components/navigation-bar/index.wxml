@@ -1,0 +1,22 @@
+<view class="header" 
+  wx:if="{{ opacity == 1 }}"
+  style="height:{{customBar}}px;padding-top:{{ statusBar - customBar}}px;">
+  <view class="left"  wx:if="{{ left !== 'none' }}" style="opacity:1;" bindtap="goBack">
+    <image class="icon" src="../../assets/navbar-back-left.png"></image>
+  </view>
+  <view class="title"></view>
+  <view class="right"></view>
+<!-- 占据位置使用 -->
+</view>
+<view class="header-fixed header" 
+    style="height:{{customBar}}px;padding-top:{{statusBar-customBar}}px;opacity:{{ opacity== 1 || 2 ?1: 0 }};background:{{ background }}">
+  <view class="left"
+    wx:if="{{ left !== 'none'  }}" 
+    style="opacity:1" bindtap="goBack">
+    <image src="../../assets/navbar-back-left.png"></image>
+  </view>
+  <view class="header-title" >{{ title }}</view>
+  <view class="right"
+    wx:if="{{ left !== 'none'  }}"  
+    style="opacity:{{ opacity== 1?1: 0}};"></view>
+</view>

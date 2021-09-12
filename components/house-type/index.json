@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "list-button": "../../components/list-button",
+    "van-slider": "@vant/weapp/slider/index",
+    "zy-slider": "../../components/zy-slider"
+  }
+}

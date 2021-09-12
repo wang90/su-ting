@@ -1,0 +1,35 @@
+<!--pages/phone_login/index.wxml-->
+<navigation-bar title="登录/注册"></navigation-bar>
+<view class="login-page">
+  <view class="title">手机号登录</view>
+  <view class="input-list">
+    <view class="item">
+      <van-field
+        label="手机号"
+        value="{{phone}}"
+        input-align="right"
+        placeholder="请输入您的手机号"
+        bind:change="onPhoneChange"
+      />
+    </view>
+    <view class="item">
+      <van-field
+          label="短信验证码"
+          placeholder="请输入短信验证码"
+          input-align="right"
+          disabled="{{}}"
+          bind:change="onSmsChange"
+          use-button-slot>
+        <van-button 
+          class="sms" 
+          slot="button" 
+          size="small" 
+          type="primary"
+          bindtap="sms">{{ sms_value }}</van-button>
+      </van-field>
+    </view>
+    <view class="item">
+      <view class="button" bindtap="login">登录</view>
+    </view>
+  </view>
+</view>

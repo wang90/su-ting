@@ -1,0 +1,38 @@
+/* pages/houselist/index.wxss */
+page::after {
+  background: #fff;
+}
+.van-tabs__nav .van-tabs__line {
+  display: none;
+}
+.van-tabs__nav .van-ellipsis {
+  position: relative;
+}
+
+.van-tabs__nav .van-tab.van-ellipsis::before {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top:50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAahJREFUaEPtlD1LA0EURecZyAZsLMTCzk6wsrWytvMPBBfCDELYQotgJVZiI7IIsktgIb/AytbO1kqwExuxsLARsoH1yoCBgCHu8mbyAS/NEpj39tx7JiG14B9acH4lAWZtUAyIAWYDcoWYBbLHxQC7QuYCMcAskD0uBtgVMheIAWaB7HExwK6QucCJgTRNtwAcEdFaGR4A70R0pbV+KnN+0hlXAWKl1EZFmBetdVRx5s/xmQUA8GqMac9LgB2l1ElFmHOt9UPFGT8G7NYkSY6JaLck0L3W+rLk2YnHnFwh+4Zer7fc7/evlVKr/4B9NBqNdrPZ/JqrABam2+1uF0VxRkRjiwGAWq122mq1Hl3A2x3ODAyBkiQ5JKK9cYAA7owxN67gvQSI4zgIgiAmovVRUABveZ5HURTlcx3AwmVZtjkYDC6IaMl+B/Bdr9c7YRg+u4T3YmAImKbpPoAD+3MAkBljbl3Dew3wa2LFPsMw/PQB7z2AL+jRvc7/haYBLQGm3fKk98kVmrUNMSAGmA3IFWIWyB4XA+wKmQvEALNA9rgYYFfIXPADPxNnMVGZmOAAAAAASUVORK5CYII=");
+  /* background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAZ9JREFUaEPtmDFLw1AUhc+tQyVBUAQHNzfBydXJ2cmf4OjQJFQQOnYsCEraDo7+BCdnJ1cnwVEXcRFdGhqwueUVlYqtJtz3ago3W+De875zziNDCHP+0JzzQw38d4PagDYgTECvkDBA8bo2II5QKKANCAMUr2sD4giFAtqAMEDxujYgjlAoYKeBbrqFQVYH8Vo+HnpG5T1Gbeku3/z0KTsG2v0YyDYKwTAeEHlhoZ0Jw5YMJDGAYgaAR4ReUA4DcbIDQqMQDKOFyLsptOOsASMcJ0cg7OYCYlwj8k5zzf4xZOcKmUNO2Ec16QK0+vuZ/ILUq+GYeuUyYGjavW2AmsDU3zUMcBOhf2sD3mjYa+CTqNM/BGd7EwGZrxD557bg3RhocxUwn1Ve/w5KT8BihJDSchswdJ10EzxoAah8wGaghQaC6r1NeDcNfF2ldB88OBi9El8g8C9tw7s1YNTPXpdH0PWVNxfw7g24oh7Ttf8VmgH0+BFqYMaB/zhOG9AGhAnoFRIGKF7XBsQRCgW0AWGA4nVtQByhUEAbEAYoXh8CBylLMU8eWV8AAAAASUVORK5CYII="); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 26px;
+  height: 34px;
+  right: -6px;
+}
+
+.house-list  {
+  padding: 110px 16px;
+}
+.house-list .null-message {
+  padding-top: 50px;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}

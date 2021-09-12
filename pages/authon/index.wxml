@@ -1,0 +1,94 @@
+<!--pages/authon/index.wxml-->
+<navigation-bar title="实名认证"></navigation-bar>
+<view class="block-line"></view>
+<view class="authon-title">
+  <view class="tips"><image src="../../assets/big-icon.png"></image></view>
+  <view>为了保障您的入住安全，请填写真实信息。我们保障您的隐私信息不会泄露给其他人，保证您的信息安全。</view>
+</view>
+<view class="authon-message authon-list">
+  <view class="card">
+     <image src="../../assets/content-name-icon.png"></image>
+    <van-field
+      value="{{ name }}"
+      class="title"
+      label=""
+      placeholder="真实姓名"
+      bind:change="onChangeName"
+   />
+   </view>
+   <view class="card">
+     <image src="../../assets/content-code-icon.png"></image>
+    <van-field
+      value="{{ code }}"
+      class="title"
+      label=""
+      placeholder="身份证号"
+      bind:change="onChangeCode"
+   />
+   </view>
+   <view class="card" bindtap="chooseBirthday">
+     <image src="../../assets/content-britday-icon.png"></image>
+     <van-field
+      value="{{ birthday }}"
+      class="title"
+      disabled
+      label=""
+      placeholder="请选择出生日期"
+   />
+   </view>
+</view>
+<view class="authon-message authon-image">
+  <view class="title">证件照片</view>
+  <view class="images-box">
+    <view class="image-code">
+      <view class="image-pre " data-type="pre" bindtap="chooseImage">
+        <image class="image" src="{{imagePre}}" wx:if="{{ imagePre }}"></image>
+        <view wx:else class="button">
+          <image class="icon" src="../../assets/add-icon.png"></image>
+          <view>身份证<text class="em">正面</text>照片</view>
+        </view>
+      </view>
+      <view class="image-last" data-type="last" bindtap="chooseImage">
+        <image class="image" src="{{imageLast}}" wx:if="{{ imageLast }}"></image>
+        <view wx:else class="button">
+          <image class="icon" src="../../assets/add-icon.png"></image>
+          <view>身份证<text class="em">反面</text>照片</view>
+        </view>
+      </view>
+    </view>
+    <view class="image-man" data-type="man" bindtap="chooseImage">
+      <image class="image" src="{{imageMan}}" wx:if="{{ imageMan }}"></image>
+        <view wx:else class="button">
+          <image class="icon" src="../../assets/add-icon.png"></image>
+          <view><text class="em">手持身份证</text>照片</view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="authon-button" bindtap="sumbit">提交审核</view>
+
+<image-cropper 
+    wx:if="{{ upfiletips }}"
+    id="image-cropper" 
+    limit_move="{{true}}" 
+    disable_rotate="{{true}}" 
+    width="{{width}}" 
+    height="{{height}}" 
+    bindload="cropperload" 
+    bindimageload="loadimage" 
+    bindtapcut="clickcut"></image-cropper>
+
+    <view class="datetime-picker" 
+  wx:if="{{ showdate }}">
+  <van-datetime-picker
+  class="picker"
+  type="date"
+  value="{{ currentDate }}"
+  bind:input="onInput"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  formatter="{{ formatter }}"
+  bind:confirm="confirmDate"
+  bind:cancel="cancelDate"
+/>
+</view>

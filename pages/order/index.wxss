@@ -1,0 +1,372 @@
+/* pages/order/index.wxss */
+@import '/css/order.wxss';
+.order-page {
+  padding-bottom: 100px;
+}
+.card-success {
+  text-align: center;
+}
+.card-success .image {
+  width: 56px;
+  height: 56px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.card-success .title {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8px;
+}
+.card-success .des {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+
+.card-qrcode {
+  display: flex;
+}
+.card-qrcode .image {
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  /* background-color: black; */
+}
+.card-qrcode .image image {
+  width: 100%;
+  height: 100%;
+}
+.card-qrcode .info {
+    min-width: 0;
+    padding-left: 13px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-qrcode .info .title {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+.card-qrcode .info .des {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+.order-page .card.card-user .card-list  {
+  padding-bottom: 5px;
+  padding-top: 10px;
+  border-bottom: 1px solid #9999;
+}
+.order-page .card.card-user .card-list:last-child{
+  border:none;
+}
+.order-page .card.card-user .card-list .card-item.card-add {
+    justify-content: flex-end;
+}
+.order-page .card.card-user .card-list .card-item.card-add .add-button  {
+  width: 96px;
+  height: 30px;
+  background: #0092F6;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.order-page .card.card-money .card-list .card-item.special-button .button{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.order-page .card.card-money .card-list .card-item.special-button .button .msg {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+}
+.order-page .card.card-money .card-list .card-item.special-button .button .msg.red{
+  color: rgba(255, 0, 17, 1);
+}
+.order-button {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;  
+  font-weight: 600;
+  color: #FFFFFF;
+  width: 230px;
+  height: 35px;
+  background: #0092F6;
+  border-radius: 18px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 35px;
+}
+
+.order-page .card.card-message .msg-date {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 8px;
+}
+.order-page .card.card-message  .msg-description {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+.order-page .card.card-message {
+  position: relative;
+}
+.order-page .card.card-message .during {
+  top: 16px;
+  right: 16px;
+  position: absolute;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+}
+.order-page .card.card-user  .card-title text {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  padding-left:8px;
+}
+.order-page .card.card-invoice {
+  border: 1px solid #F7F7F7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-page .card.card-invoice .add-invoice {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-page .card.card-invoice .card-title {
+  margin-bottom: 0;
+}
+.order-page .house-messsage {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+.order-page .house-messsage .target{
+  color: #0092F6;
+}
+
+.order-page .card.card-discounts{
+  border: 1px solid #F7F7F7;
+}
+.order-page .card.card-discounts .cur-discounts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.order-page .card.card-discounts .cur-discounts .card-title {
+  margin: 0;
+}
+.order-page .card.card-discounts .cur-discounts .add-invoice {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order-page .card.card-discounts .card-list{
+  padding-top:10px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+}
+.order-page .card.card-discounts .card-list .card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-page .card.card-discounts .card-list .card-item.active  {
+  color:#0092F6;
+}
+.order-page .card.card-discounts .add-invoice .msg {
+  color:#0092F6;
+  font-size: 12px;
+}
+
+
+
+
+/* 提交 */
+.pay-for-button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* height: 54px; */
+  background: #FFFFFF;
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.03);
+  z-index: 1000;
+  
+  display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 34px;
+  box-sizing: border-box;
+}
+.pay-for-button > view {
+  width: 50%;
+  min-width: 0;
+}
+.pay-for-button .pay-for-info {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.pay-for-button .pay-for-info .info-speed {
+  
+}
+.pay-for-button .pay-for-info .info-speed .money .title {
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+}
+.pay-for-button .pay-for-info .info-speed .money .des {
+  font-size: 20px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FF0011;
+}
+.pay-for-button .pay-for-info .info-speed .description {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FF0011;
+}
+/* .pay-for-button .pay-for-info .info-speed  .money .cur {
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FF0011;
+}
+.pay-for-button .pay-for-info .info-speed  .money .uniy{
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+} */
+/* .pay-for-button .pay-for-info .info-speed  .des {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+} */
+.pay-for-button .pay-for-info  .special {
+  font-size: 10px;
+  font-family: PingFangSC-Semibold, PingFang SC;  
+  font-weight: 600;
+  color: #FF0011;
+  background: linear-gradient(160deg, rgba(255, 91, 0, 0.1) 0%,rgba(255, 0, 17, 0.1) 100%);
+  border-radius: 4px;
+  padding: 2px 5px;
+  max-width: 85px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  margin-left:8px;
+}
+.pay-for-button  .pay-other {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pay-for-button  .pay-other .ord-button {
+  background: linear-gradient(165deg, #00C4FB 0%, #0092F6 100%);
+  box-shadow: 0px 8px 10px -6px rgba(0, 124, 178, 0.44);
+  border-radius: 19px;
+  width: 116px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.show-call {
+  padding: 20px;
+  text-align: center;
+  width: 315px;
+}
+.show-call .title {
+  font-size: 16px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom:16px;
+}
+.show-call .phone {
+  font-size: 20px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.show-call .description {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom:24px;
+}
+.show-call  .call-button {
+  width: 189px;
+  height: 35px;
+  background: #0092F6;
+  border-radius: 19px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 35px;
+  margin-bottom: 8px;
+  margin: 0 auto;
+}
+.show-call  .close {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  padding: 8px;
+  text-align: center;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.add-more-icon {
+  width: 20px;
+  height: 20px;
+}

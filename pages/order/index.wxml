@@ -1,0 +1,163 @@
+<navigation-bar title="订单详情"></navigation-bar>
+<view class="order-page">
+  <view class="card card-success" wx:if="{{ status == 0 }}">
+    <image  class="image" src="../../assets/big-success-icon.png"></image>
+    <!-- <view class="image">
+      
+    </view> -->
+    <view class="title">提交成功</view>
+    <view class="des">我们已通知房东尽快处理您的预订，确认后将</view>
+  </view>
+  <view class="card card-qrcode" wx:if="{{ status == 0 }}">
+    <view class="image">
+      <image src="../../assets/weixin-code.png"></image>
+    </view>
+    <view class="info">
+      <view class="title">关注“速庭公众号”，了解更多订单信息</view>
+      <view class="des">长按识别二维码</view>
+    </view>
+  </view>
+  <view class="card card-message"
+    wx:if="{{ start && end }}" 
+    bindtap="toDate">
+    <view class="card-title">预订日期</view>
+    <view class="msg-date">{{ startTimer }} - {{ endTimer }}</view>
+    <view class="msg-description">{{ cuzutype }}·{{ huxing }}·宜住{{ kzrs }}人</view>
+    <view class="during">共{{ days }}晚</view>
+  </view>
+  <view class="card card-message"
+    wx:else bindtap="toDate">
+    <view class="card-title">添加日期</view>
+  </view>
+  <view class="card card-user">
+    <view class="card-title">
+      入住人信息<text>已选{{ persion.length }}人</text>
+    </view>
+    <view class="card-list" 
+      wx:for="{{ persion }}"
+      wx:for-item="item"
+      wx:key="index"
+      wx:for-index="index">
+      <view class="card-item">
+        <view class="title">入住人姓名</view>
+        <view class="msg">{{ item.name }}</view>
+      </view>
+      <view class="card-item">
+        <view class="title">手机号</view>
+        <view class="msg">{{ item.phone }}</view>
+      </view>
+      <view class="card-item card-add">
+        <view class="add-button"
+          wx:if="{{status === 1 }}"
+          data-persionid="{{item.checkId}}" 
+          bindtap="editPesion">编辑</view>
+      </view>
+    </view>
+    <view class="card-list" wx:if="{{status=== 1}}">
+      <view class="card-item card-add">
+        <view class="add-button"
+          bindtap="editPesion">添加</view>
+      </view>
+    </view>
+  </view>
+  <view class="card card-invoice">
+    <view class="card-title">发票信息</view>
+    <view class="add-invoice" wx:if="{{ status=== 1 }}" bindtap="addInvoice">
+      <text wx:if="{{invoice == null }}">添加</text>
+      <text wx:elif="{{ invoice.type === 0 }}">不添加</text>
+      <text wx:else>修改</text>
+      <image class="add-more-icon" src="../../assets/jiantou-more-icon.png"></image>
+    </view>
+    <view class="add-invoice" wx:else>
+      <text wx:if="{{invoice == null }}">未添加</text>
+      <text wx:elif="{{ invoice.type === 0 }}">不添加</text>
+      <text wx:else>已添加</text>
+    </view>
+  </view>
+  <view class="card card-invoice">
+    <view class="card-title">优惠券</view>
+    <view class="add-invoice" bindtap="addSpecial" wx:if="{{ specials.length > 0 }}">
+      <text class="msg" wx:if="{{ special == null }}">未添加</text>
+      <text class="msg" wx:elif="{{special.type === 0}}">不添加</text>
+      <text class="msg" wx:else>{{ status === 1 ?'添加':'未添加'}}</text>
+      <image class="add-more-icon" src="../../assets/jiantou-more-icon.png"></image>
+    </view>
+    <view class="add-invoice" bindtap="addSpecial" wx:if="{{ specials.length ==  0 }}">
+      <text class="msg">暂无可用优惠卷</text>
+    </view>
+  </view>
+  <view class="card card-discounts">
+    <view class="cur-discounts">
+      <view class="card-title">更多优惠</view>
+      <view class="add-invoice"wx:if="{{ discounts.length > 0 }}">
+        <text class="msg red" bindtap="chooseDiscount">{{ currentDiscount.discountName }}</text>
+        <image class="add-more-icon" src="../../assets/jiantou-more-icon.png"></image>
+      </view>
+    </view>
+    <view class="card-list" wx:if="{{ discounts.length> 0 && discountTips}}">
+      <view 
+        class="card-item {{item.id === currentDiscount.id ? 'active': ''}}"
+        wx:for="{{ discounts }}"
+        wx:for-index="index"
+        wx:for-item ="item"
+        wx:key = "index"
+        data-discountid="{{ item.id }}"
+        bindtap="chooseDiscount">
+        <text>{{ item.discountName }}</text>
+        <van-icon name="passed" />
+      </view>
+    </view>
+    <view class="add-invoice" wx:if="{{ discounts.length ==  0 }}">
+      <text class="msg">暂无更多优惠</text>
+    </view>
+  </view>
+  <view class="card card-money">
+    <view class="card-title">订单金额</view>
+    <view class="card-list">
+      <view 
+          wx:for="{{ moneyDetails }}"
+          wx:for-item="item"
+          wx:for-index="index"
+          wx:key="index">
+        <view class="card-item">
+          <view class="title em">{{ item.key }}</view>
+          <view class="title">￥{{ item.value }}</view>
+        </view>
+        <view class="card-item" 
+          wx:for="{{ item.subDetails }}"
+          wx:for-item="detail"
+          wx:for-index="index"
+          wx:key="index">
+          <view class="title">{{ detail.key }}</view>
+          <view class="msg">{{ detail.value }}</view> 
+        </view>
+      </view>
+      <view class="card-line"></view>
+    </view>
+  </view>
+  <view class="house-messsage" wx:if="{{status=== 1}}">
+    <view>入住时间：入住日{{rzsj}}后入住，离店日{{tfsj}}前退房（以当地城市时区为准）</view>
+    <view> 预订协议：我同意<text class="target" bindtap="chooseUrl">《协议名称》</text>及退订入住要求</view>
+  </view>
+  <view class="order-button" 
+    wx:if="{{ status === 0 }}"
+    bindtap="toOrderItem">查看订单</view>
+</view>
+<view class="pay-for-button" wx:if="{{status=== 1}}">
+    <view class="pay-for-info">
+      <view class="info-speed">
+        <view class="money">
+          <text class="title">总价</text>
+          <text class="des">￥{{ customMoney  }}</text>
+        </view>
+        <view class="description">
+          <text class="title">已经优惠</text>
+          <text class="des">￥{{  resultCustMoney   }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="pay-other">
+      <view class="ord-button" bindtap="addOrder">提交订单</view>
+    </view>
+  </view>
+  <platform-explain-info show="{{ explanTips }}" type="03"></platform-explain-info>

@@ -1,0 +1,47 @@
+.message {
+  padding:  16px 0;
+}
+.message .card-input {
+  position: relative;
+  padding-left: 10px;
+}
+.message .card-input::before {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  font-size: 15px;
+  content: "*";
+  color: #FF0011;
+  z-index: 99;
+}
+.message .card .title .van-field__error-message {
+  bottom: -25px;
+}
+
+.message .card .button {
+  width: 230px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0, 146, 246, 0.5);
+  border-radius: 18px;
+  text-align: center;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin:0 auto;
+}
+.message .card .button.active {
+  background: rgba(0, 146, 246, 1);
+}
+
+.van-field__body.van-field__body--textarea {
+  background: #F8F8F8;
+  border-radius: 8px;
+  padding: 16px 12px;
+}
+.van-field__error-message {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}

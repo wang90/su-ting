@@ -1,0 +1,27 @@
+/* pages/reset_pwd/index.wxss */
+.login-page {
+  padding-top: 32px;
+}
+.login-page .title {
+  font-size: 20px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom:12px;
+  padding-left: 16px;
+}
+
+
+.button {
+  width: 230px;
+  height: 35px;
+  background: #0092F6;
+  border-radius: 18px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 54px auto 0;
+}

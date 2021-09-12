@@ -1,0 +1,180 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/order/index",
+          "pathName": "pages/order/index",
+          "query": "_id=819e64d642714069b392861f0e5e44cb",
+          "scene": null
+        },
+        {
+          "name": "pages/message/index",
+          "pathName": "pages/message/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orderlist/index",
+          "pathName": "pages/orderlist/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/messageServices/index",
+          "pathName": "pages/messageServices/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/house/index",
+          "pathName": "pages/house/index",
+          "query": "_id=819e64d642714069b392861f0e5e44cb",
+          "scene": null
+        },
+        {
+          "name": "pages/orderitem/index",
+          "pathName": "pages/orderitem/index",
+          "query": "_id=12344444",
+          "scene": null
+        },
+        {
+          "name": "pages/datepage/index",
+          "pathName": "pages/datepage/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/houselist/index",
+          "pathName": "pages/houselist/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/common/index",
+          "pathName": "pages/common/index",
+          "query": "_id=819e64d642714069b392861f0e5e44cb",
+          "scene": null
+        },
+        {
+          "name": "pages/contactPersonItem/index",
+          "pathName": "pages/contactPersonItem/index",
+          "query": "_id=cae2173035d4476da5484ea2c8978c73",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/index",
+          "pathName": "pages/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mineLandlord/index",
+          "pathName": "pages/mineLandlord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/authon/index",
+          "pathName": "pages/authon/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/authon/index",
+          "pathName": "pages/authon/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/authon/index",
+          "pathName": "pages/authon/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mineAcccount/index",
+          "pathName": "pages/mineAcccount/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order/index",
+          "pathName": "pages/order/index",
+          "query": "_id=3bc90ff504d04e3c9488e435e4fca29a",
+          "scene": null
+        },
+        {
+          "name": "pages/order/index",
+          "pathName": "pages/order/index",
+          "query": "_id=9f477dca9db94783b2d524ada8b9b31c",
+          "scene": null
+        },
+        {
+          "name": "pages/house/index",
+          "pathName": "pages/house/index",
+          "query": "_id=709ad5ee29cb450a818a85119b8048d6",
+          "scene": null
+        },
+        {
+          "name": "pages/house/index",
+          "pathName": "pages/house/index",
+          "query": "_id=4db5594d21d3454cbd2a64bcb478b00b",
+          "scene": null
+        },
+        {
+          "name": "pages/house/index",
+          "pathName": "pages/house/index",
+          "query": "_id=709ad5ee29cb450a818a85119b8048d6",
+          "scene": null
+        },
+        {
+          "name": "pages/datepage/index",
+          "pathName": "pages/datepage/index",
+          "query": "houseid=709ad5ee29cb450a818a85119b8048d6",
+          "scene": null
+        },
+        {
+          "name": "pages/orderitem/index",
+          "pathName": "pages/orderitem/index",
+          "query": "_id=202109120304230237",
+          "scene": null
+        },
+        {
+          "name": "pages/contactPersonItem/index",
+          "pathName": "pages/contactPersonItem/index",
+          "query": "_id=456d99f7e7154ac09748ac9126262247&type=choose",
+          "scene": null
+        },
+        {
+          "name": "pages/collect/index",
+          "pathName": "pages/collect/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orderitem/index",
+          "pathName": "pages/orderitem/index",
+          "query": "_id=202109121444520004",
+          "scene": null
+        },
+        {
+          "name": "pages/orderitem/index",
+          "pathName": "pages/orderitem/index",
+          "query": "_id=202109121533530204",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

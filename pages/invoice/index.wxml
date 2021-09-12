@@ -1,0 +1,97 @@
+<navigation-bar title="发票信息"></navigation-bar>
+<view class="order-page">
+  <view class="card invoice-card"
+    data-invoiceid="{{ null }}" 
+    bindtap="chooseInvoice">
+    <image src="../../assets/choose-back-icon.png"></image>不需发票
+  </view>
+  <view class="card card-invoice">
+    <view class="card-title">发票抬头</view>
+    <van-tabs 
+      active="{{ active }}" 
+      bind:change="onChange">
+      <van-tab title="个人">
+        <view class="card-line"></view>
+        <view class="card-title">收票人信息</view>
+        <view class="card-list">
+          <view class="card-item">
+            <van-field
+              center
+              input-align="right"
+              value="{{ phone }}"
+              label="收票人手机"
+              placeholder="请输入手机号"
+              border="{{ false }}"
+              bind:change="onChangePhone"
+            />
+          </view>
+          <view class="card-item">
+            <van-field
+              value="{{ email }}"
+              label="收票人邮箱"
+              center
+              input-align="right"
+              placeholder="请输入邮箱"
+              border="{{ false }}"
+              bind:change="onChangeEmail"
+            />
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="单位">
+        <view class="card-line"></view>
+        <view class="card-title">发票信息</view>
+        <view class="card-list">
+          <view class="card-item">
+            <van-field
+              value="{{ title }}"
+              label="公司抬头"
+              center
+              input-align="right"
+              placeholder="请输入公司抬头"
+              border="{{ false }}"
+              bind:change="onChangeTitle"
+            />
+          </view>
+          <view class="card-item">
+            <van-field
+              value="{{ code }}"
+              label="公司税号"
+              center
+              input-align="right"
+              placeholder="请输入公司税号"
+              border="{{ false }}"
+              bind:change="onChangeCode"
+            />
+          </view>
+        </view>
+        <view class="card-title">收票人信息</view>
+        <view class="card-list">
+          <view class="card-item">
+            <van-field
+              value="{{ phone }}"
+              label="收票人手机"
+              center
+              input-align="right"
+              placeholder="请输入手机号"
+              border="{{ false }}"
+              bind:change="onChangePhone"
+            />
+          </view>
+          <view class="card-item">
+            <van-field
+              value="{{ email }}"
+              label="收票人邮箱"
+              placeholder="请输入邮箱"
+              center
+              input-align="right"
+              border="{{ false }}"
+              bind:change="onChangeEmail"
+            />
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view class="save-button" bindtap="save">保存</view>
+</view>

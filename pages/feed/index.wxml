@@ -1,0 +1,31 @@
+<!--pages/messageQustion/index.wxml-->
+<navigation-bar title="意见反馈"></navigation-bar>
+<view class="message">
+   <view class="card">
+    <van-field
+      class="textare"
+      value="{{ message }}"
+      label=""
+      type="textarea"
+      placeholder="请留下您宝贵的建议"
+      maxlength="{{500}}"
+      autosize="{{autosize}}"
+      border="{{ false }}"
+      show-word-limit="{{ true }}"
+      bind:change="onChangeVal"
+    />
+   </view>
+   <view class="card">
+    <van-field
+      value="{{ phone }}"
+      class="title"
+      label=""
+      placeholder="请输入手机号码"
+      bind:change="onChangePhone"
+   />
+   </view>
+
+   <view class="card">
+     <view class="button {{active? 'active': ''}}" bindtap="sumit">提交</view>
+   </view>
+</view>

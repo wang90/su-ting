@@ -1,0 +1,4 @@
+<!--components/checkout-pwd/index.wxml-->
+<view bindtap="choose">
+  <slot></slot>
+</view>

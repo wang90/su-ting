@@ -1,0 +1,84 @@
+<!--pages/contactPersonItem/index.wxml-->
+<navigation-bar title="常用联系人"></navigation-bar>
+<view class="persion-page">
+  <view class="title-box">
+    <view class="icon">
+      <image src="../../assets/big-icon.png"></image>
+    </view>
+    <view class="des">为了保障您的入住安全，请填写真实信息。我们保障您的隐私信息不会泄露给其他人，保证您的信息安全。</view>
+  </view>
+  <view class="list">
+    <view class="card">
+      <image src="../../assets/content-name-icon.png"></image>
+    <van-field
+      value="{{ name }}"
+      class="title"
+      label=""
+      placeholder="请输姓名"
+      bind:change="onChangeName"
+   />
+   </view>
+   <view class="card card-sex">
+     <image src="../../assets/content-sex-icon.png"></image>
+    <van-radio-group
+        value="{{sex}}"
+        bind:change="onChangeSex"
+        direction="horizontal"  
+      >
+        <van-radio name="1">男</van-radio>
+        <van-radio name="2">女</van-radio>
+    </van-radio-group>
+   </view>
+   <view class="card">
+     <image src="../../assets/content-code-icon.png"></image>
+    <van-field
+      value="{{ code }}"
+      class="title"
+      label=""
+      placeholder="请输入身份证号"
+      bind:change="onChangeCode"
+   />
+   </view>
+   <view class="card">
+     <image src="../../assets/content-phone-icon.png"></image>
+    <van-field
+      value="{{ phone }}"
+      class="title"
+      label=""
+      placeholder="请输入手机号"
+      bind:change="onChangePhone"
+   />
+   </view>
+   <view class="card" bindtap="chooseBirthday">
+     <image src="../../assets/content-britday-icon.png"></image>
+     <van-field
+      value="{{ birthday }}"
+      class="title"
+      disabled
+      label=""
+      placeholder="请选择出生日期"
+   />
+   </view>
+  </view>
+  <view class="button-list">
+    <view class="save-button" bindtap="chooseSave">{{ isEdit ? '保存' : '创建'}}</view>
+    <view class="delete-button" 
+      wx:if="{{isEdit}}" 
+      bindtap="deletePersion">删除</view>
+  </view>
+</view>
+
+<view class="datetime-picker" 
+  wx:if="{{ showdate }}">
+  <van-datetime-picker
+  class="picker"
+  type="date"
+  value="{{ currentDate }}"
+  bind:input="onInput"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  formatter="{{ formatter }}"
+  bind:confirm="confirmDate"
+  bind:cancel="cancelDate"
+/>
+</view>

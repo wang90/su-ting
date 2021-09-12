@@ -1,0 +1,25 @@
+<!--pages/login/index.wxml-->
+<navigation-bar title="登录/注册"></navigation-bar>
+<view class="login-page">
+  <image class="image" src="../../assets/login-image.png"></image>
+  <view class="login-list">
+    <!-- bindtap="wxlogin" -->
+    <view class="wx-login">
+      <button data-type="wx"
+        open-type="getPhoneNumber"
+        bindgetphonenumber="getWxLogin">微信账号登录/注册</button>
+    </view>
+    <view class="phone-login" >
+      <!-- 手机号登录/注册 -->
+      <button open-type="getPhoneNumber" 
+        data-type="phone"
+        bindgetphonenumber="toPhoneLogin">手机号登录/注册</button>
+    </view>
+  </view>
+  <view class="agreement {{ agreement? 'active':'' }}">
+    <text class="button" bindtap="chooseAgreement"></text>
+    <text>登录代表您已同意</text>
+    <text class="url" bindtap="chooseExplan">《用户注册协议》</text>
+  </view>
+</view>
+<platform-explain-info show="{{ explanTips }}" type="04"></platform-explain-info>

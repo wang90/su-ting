@@ -1,0 +1,98 @@
+<!--pages/home/index.wxml-->
+<view class="home-header">
+  <view class="home-swiper">
+    <swiper 
+        indicator-dots="{{ true }}"
+        autoplay="{{ true }}"
+        interval="{{ 5000 }}" 
+        circular="{{ true }}"
+        duration="{{ 1500 }}">
+        <block wx:for="{{ banners }}" 
+          wx:for-item="image"
+          wx:for-index="index"
+          wx:key="index">
+          <swiper-item>
+            <image class="image" src="{{ image }}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class="choose-box">
+      <view class="current-location" >
+        <text bindtap="toCity">{{ city }}</text>
+        <view class="icon" bindtap="bindlocation">
+          <image src="../../assets/location-tips-icon.png"></image>
+          {{ location_status ? '定位中..': '我的位置'}}
+        </view>
+      </view>
+      <view class="timer-selectors" 
+        wx:if="{{ startTimer &&  endTimer }}"
+        bindtap="toDate">
+        <view class="date-box">
+          <view class="start">
+          <view class="tips">入住</view>
+          <view class="timer">{{ startTimer }}</view>
+        </view>
+        <view class="end">
+          <view class="tips">离开</view>
+          <view class="timer">{{ endTimer }}</view>
+        </view>
+        </view>
+        <view class="count">共{{ days }}晚</view>
+      </view>
+      <view class="to-search" wx:else>
+        <view class="button" bindtap="toDate">添加日期</view>
+      </view>
+      <view class="to-search">
+        <view class="button" bindtap="toSearch">搜房源</view>
+      </view>
+  </view>
+</view>
+<view class="hot-city">
+  <view class="header">
+    <view class="title">热门城市</view>
+    <view class="more"
+      data-topage="houselist" 
+      bindtap="toCity">
+      更多<image src="../../assets/home-more-icon.png"></image>
+    </view>
+  </view>
+  <view class="hot-list">
+    <view class="item" 
+        wx:for="{{ hots }}"
+        wx:for-index="index"
+        wx:key="index"
+        wx:for-item="city"
+        data-cityid="{{ city.cityId }}" 
+        bindtap="toSearch">
+        <view class="image">
+          <image src="{{ city.icon }}"></image>
+        </view>
+        <view class="info">
+          <view class="city">{{ city.cityName }}</view>
+          <view class="speed">均价 298/晚</view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="house-type">
+  <view class="header">
+    <view class="title">房源类型</view>
+    <view class="more" bindtap="toSearch">
+      全部<image src="../../assets/home-more-icon.png"></image>
+    </view>
+  </view>
+  <view class="house-type-list">
+      <view class="item"
+        wx:for="{{ types }}"
+        wx:for-index="index"
+        wx:key="index"
+        wx:for-item="type"
+        data-typeid="{{ type.typeId }}"
+        bindtap="toSearch">
+        <image class="image" src="{{ type.imgsrc }}"></image>
+        <view class="title">{{ type.typeName }}</view>
+        <view class="descrption">{{ houseType[type.typeId] || '' }}</view>
+      </view>
+  </view>
+</view>

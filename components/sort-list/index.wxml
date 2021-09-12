@@ -1,0 +1,21 @@
+<view wx:if="{{ list.length > 0 }}">
+<view class="sametown-title">{{ title }}</view>
+<view class="sametown-list">
+  <view class="item" 
+    wx:for="{{ list }}"
+    wx:for-item="item"
+    wx:key="index"
+    wx:for-index="index"
+    data-houseid="{{item.housResoId}}"
+    bindtap="toHouse">
+    <view class="image">
+      <image src="{{ item.imgsrc }}"></image>
+    </view>
+    <view class="info">
+      <view class="title">{{ item.title }}</view>
+      <view class="des">{{ item.huxing }}</view>
+      <view class="money">￥{{ item.customMoney }}</view>
+    </view>
+  </view>
+</view>
+</view>

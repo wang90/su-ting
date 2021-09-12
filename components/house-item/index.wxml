@@ -1,0 +1,43 @@
+<view class="item" 
+    data-houseid="{{ houseid }}">
+    <view class="image">
+      <image model="scaleToFill"  
+        data-houseid="{{ houseid }}"  
+        bindtap="toHouse" 
+        src="{{ image }}"></image>
+      <collect-button 
+        class="collect"
+        houseid="{{ houseid }}"
+        collect="{{ collect }}"
+        bind:update="collectUpdate">
+        <image class="icon"
+          slot="default" src="../../assets/house-collect-icon.png"></image>
+        <image class="active-icon" slot="active"
+          src="../../assets/house-collect-active-icon.png"></image>
+      </collect-button>
+    </view>
+    <view class="info"
+      data-houseid="{{ houseid }}"   
+      bindtap="toHouse">
+      <view class="title">整租·精品公寓·{{ huxing }}·宜住{{ kzrs }}人</view>
+      <view class="name">{{ title }}</view>
+      <view class="tags">
+        <text class="tag" 
+          wx:for="{{  furnishArray }}"
+          wx:for-index="index"
+          wx:for-key="index"
+          wx:for-item="item"
+          wx:key="index"
+          hidden="{{ index >= 3 }}">{{ item.title }}</text>
+      </view>
+      <view class="more">
+        <view class="speed">￥{{ money }}</view>
+        <view class="assess">
+          <van-rate
+              color="#ffd21e"
+              void-color="#eee" 
+              value="{{ comments }}" />
+          {{ comments }}条评论</view>
+      </view>
+    </view>
+</view>

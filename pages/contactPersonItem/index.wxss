@@ -1,0 +1,95 @@
+/* pages/contactPersonItem/index.wxss */
+.persion-page {
+  padding: 16px 16px;
+  background: #F8F8F8;
+}
+.persion-page .title-box {
+  background: rgba(0, 146, 246, 0.1);
+  border-radius: 8px;
+  padding: 18px 16px;
+  display: flex;
+  margin-bottom: 35px;
+}
+.persion-page .title-box .icon {
+  /* width: 56px; */
+  flex: 0 0 56px;
+  height: 56px;
+  border-radius: 50%;
+  min-width: 0;
+}
+.persion-page .title-box .icon  > image{
+  width: 100%;
+  height: 100%;
+}
+.persion-page .title-box .des {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #0092F6;
+  min-width: 0;
+  padding-left: 12px;
+}
+
+.persion-page .list { 
+  background: #FFFFFF;
+  border-radius: 8px;
+}
+.persion-page .list .card {
+  display: flex;
+  align-items: center;
+}
+.persion-page .list .card > image { 
+  width: 24px;
+  height: 24px;
+}
+.persion-page .list .card.card-sex {
+  height: 40px;
+}
+.persion-page .list .card.card-sex image{
+  margin-right: 10px;
+}
+.button-list {
+  position: fixed;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+}
+.button-list .save-button {
+  width: 230px;
+  height: 35px;
+  background: #0092F6;
+  border-radius: 18px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold, PingFang SC;  
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+.button-list .delete-button {
+  width: 230px;
+  height: 35px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+  text-align: center;
+  line-height: 35px;
+}
+
+.datetime-picker {
+  position: fixed;
+  bottom:0;
+  left:0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  top:0;
+  z-index: 999;
+}
+.datetime-picker .picker{
+  position: absolute;
+  bottom:0;
+  left:0;
+  right: 0;
+}

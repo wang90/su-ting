@@ -1,0 +1,32 @@
+/* pages/messageSystem/index.wxss */
+.message {
+  padding: 16px 16px;
+}
+.message .title {
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.message .city {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+.message .city image {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  display: block;
+}
+.message .value {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}

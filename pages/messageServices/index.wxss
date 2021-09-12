@@ -1,0 +1,98 @@
+/* pages/messageServices/index.wxss */
+.list-content {
+  padding: 40px 16px;
+}
+.list-content .item {
+  margin-bottom: 12px;
+}
+.list-content .item  .timer {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.list-content .item  .timer {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  text-align: center;
+}
+.list-content .item .value-box {
+  display: flex;
+  justify-content: flex-start;
+}
+.list-content .item .value-box.admin {
+  flex-direction: row-reverse;
+}
+.list-content .item .value-box .user {
+  width: 42px;
+  height: 42px;
+  /* background: red; */
+  border-radius: 50%;
+}
+.list-content .item .value-box .value {
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  background: #fff;
+  padding: 12px;
+  background: #FFFFFF;
+  border-radius: 0px 16px 16px 16px;
+  margin-left: 8px;
+}
+.list-content .item .value-box.admin .value {
+  margin-right: 8px;
+  margin-left: 0;
+  background: rgba(0, 146, 246, 0.1);
+  color: rgba(0, 146, 246, 1);
+  border-radius: 16px 0px 16px 16px;
+}
+
+.question-value {
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #0092F6;
+  position: fixed;
+  right: 16px;
+  top: 16px;
+}
+.input-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 88px;
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+}
+.input-box .input {
+  flex: 1;
+}
+.input-box .input  .van-cell {
+  background: #F8F8F8;
+  border-radius: 17px;
+  height: 34px;
+  line-height: 34px;
+  padding: 0;
+  padding-left: 16px;
+  padding-top: 5px;
+}
+.input-box .send {
+  width: 83px;
+  height: 34px;
+  background: #0092F6;
+  border-radius: 17px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-left: 8px;
+}

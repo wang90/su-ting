@@ -1,0 +1,10 @@
+<!--components/platform-explain-info/index.wxml-->
+<van-popup show="{{ show }}"
+    round
+    bind:close="onClose">
+   <view class="commount" >
+      <import src="../wx-parse/wxParse.wxml"/>
+      <!-- //这里data中article为bindName -->
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+   </view>
+  </van-popup>

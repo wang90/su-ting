@@ -1,0 +1,29 @@
+<!--pages/mineAcccount/index.wxml-->
+<navigation-bar title="账号设置"></navigation-bar>
+<view class="mine-page">
+  <image-cropper 
+    wx:if="{{ upfiletips }}"
+    id="image-cropper" 
+    limit_move="{{true}}" 
+    disable_rotate="{{true}}" 
+    width="{{width}}" 
+    height="{{height}}" 
+    bindload="cropperload" 
+    bindimageload="loadimage" 
+    bindtapcut="clickcut"></image-cropper>
+    <view class="list">
+      <view class="card">
+          <view class="image">
+            <image src="{{ avatar }}"></image>
+            <view class="upload" bindtap="upfile">点击更换</view>
+          </view>
+          <view class="info">
+            <view class="name">{{ nickname }}</view>
+            <view class="phone">{{ phone }}</view>
+          </view>
+      </view>
+    </view>
+    <view class="button-list">
+      <view class="button" bindtap="changeAccount">切换账号</view>
+    </view>
+</view>

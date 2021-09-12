@@ -1,0 +1,28 @@
+<view class="item">
+    <view class="talk-title">
+      <view class="talk-info">
+            <view class="image">
+              <image mode="scaleToFill" 
+                src="{{ imgsrc }}"></image>
+            </view>
+            <view class="info">
+              <view class="nickname">{{ name }}</view>
+              <view class="date">{{ timer }}</view>
+            </view>
+          </view>
+          <view class="talk-score">
+            <van-rate
+              color="#ffd21e"
+              void-color="#eee" 
+              value="{{ level }}" />
+          </view>
+        </view>
+        <view class="talk-des">{{ contents }}</view>
+        <view class="talk-images" wx:if="{{ false }}">
+          <view class="item"
+            wx:key="index"
+            wx:for-index="index"
+            wx:for-item="item" 
+            wx:for="{{[1,2,34,567,7]}}"></view>
+        </view>
+      </view>
