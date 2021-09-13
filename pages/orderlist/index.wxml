@@ -124,7 +124,7 @@
             <text wx:elif="{{ item.orderState === 7 }}" class="fail">已失效</text>
             <text wx:elif="{{ item.orderState === 8 }}" class="finished">退款-待确认</text>
             <text wx:elif="{{ item.orderState === 9 }}" class="finished">退款-已确认 </text>
-            <text wx:if="{{ item.orderState === 10 }}" class="finished">已完成</text>
+            <text wx:elif="{{ item.orderState === 10 }}" class="finished">已完成</text>
             <text wx:else>进行中</text>
           </view>
           <view class="title">{{ item.title }}</view>
