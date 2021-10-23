@@ -21,6 +21,15 @@ export function  dateToStr( date) {
   return `${ str.getFullYear() }-${ __month < 10 ? `0${ __month }`: __month }-${ __day < 10 ? `0${ __day }`: __day }`;
 }
 
+export function toDayStr( str ) {
+  const __date = str.split('-');
+  if ( __date.length === 3 ) {
+    return `${ __date[0] }年${ __date[1] }月${ __date[2] }日`
+  }
+  return str;
+}
+
+
 export function strToObect( dateJson ) {
   const __json = dateJson.split('-').join('/');
   return new Date(__json)

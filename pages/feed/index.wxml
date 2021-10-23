@@ -8,14 +8,14 @@
       label=""
       type="textarea"
       placeholder="请留下您宝贵的建议"
-      maxlength="{{500}}"
-      autosize="{{autosize}}"
+      maxlength="{{ 500 }}"
+      autosize="{{ autosize }}"
       border="{{ false }}"
       show-word-limit="{{ true }}"
       bind:change="onChangeVal"
     />
    </view>
-   <view class="card">
+   <view class="card card-bottom">
     <van-field
       value="{{ phone }}"
       class="title"

@@ -39,7 +39,7 @@
               wx:if="{{ item.orderState == 3 }}">待入住</text>
             </view>
             <view class="timer">
-              <text>{{ item.rzsj }}-{{ item.tfsj }}</text>
+              <text>{{ item.__rzsj }}-{{ item.__tfsj }}</text>
               <text>{{ item.__days }}天</text>
             </view>
             <view class="money">￥{{ item.orderTotal }}</view>
@@ -128,7 +128,7 @@
             <text wx:else>进行中</text>
           </view>
           <view class="title">{{ item.title }}</view>
-          <view class="timer">{{ item.rzsj }}-{{ item.tfsj }}</view>
+          <view class="timer">{{ item.__rzsj }}-{{ item.__tfsj }}</view>
           <view class="money">￥{{ item.orderTotal }}</view>
         </view>
       </view>

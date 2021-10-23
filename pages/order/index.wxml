@@ -33,6 +33,11 @@
     <view class="card-title">
       入住人信息<text>已选{{ persion.length }}人</text>
     </view>
+    <view class="add-button-icon"
+      bindtap="editPesion" 
+      wx:if="{{ status=== 1 && persion.length > 0 }}" >
+      <image src="../../assets/add-button-icon.png"></image>
+    </view>
     <view class="card-list" 
       wx:for="{{ persion }}"
       wx:for-item="item"
@@ -53,7 +58,8 @@
           bindtap="editPesion">编辑</view>
       </view>
     </view>
-    <view class="card-list" wx:if="{{status=== 1}}">
+    <view class="card-list" 
+      wx:if="{{status=== 1 && persion.length === 0 }}">
       <view class="card-item card-add">
         <view class="add-button"
           bindtap="editPesion">添加</view>
@@ -61,6 +67,9 @@
     </view>
   </view>
   <view class="card card-invoice">
+    <view class="boreder-image">
+      <image src="../../assets/order-border-icon.png"></image>
+    </view>
     <view class="card-title">发票信息</view>
     <view class="add-invoice" wx:if="{{ status=== 1 }}" bindtap="addInvoice">
       <text wx:if="{{invoice == null }}">添加</text>

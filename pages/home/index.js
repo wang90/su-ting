@@ -108,7 +108,7 @@ Page({
         })
         this.setData({
           types: housTypeArray,
-          hots: hotCityArray,
+          hots: hotCityArray.slice(0,6),
           banners: __banners || [],
         })
       }

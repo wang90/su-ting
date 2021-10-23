@@ -110,7 +110,7 @@
     <view class="msg-description">{{ lendTypeName }}·{{ huxing }}</view>
     <view class="during"></view>
   </view>
-  <view>
+  <view class="card-map">
     <map-card 
     title= "{{ title }}"
     latitude="{{ latitude }}"

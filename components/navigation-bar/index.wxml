@@ -1,6 +1,6 @@
 <view class="header" 
   wx:if="{{ opacity == 1 }}"
-  style="height:{{customBar}}px;padding-top:{{ statusBar - customBar}}px;">
+  style="padding-top:{{ capsuleObj.top }}px;">
   <view class="left"  wx:if="{{ left !== 'none' }}" style="opacity:1;" bindtap="goBack">
     <image class="icon" src="../../assets/navbar-back-left.png"></image>
   </view>
@@ -9,7 +9,9 @@
 <!-- 占据位置使用 -->
 </view>
 <view class="header-fixed header" 
-    style="height:{{customBar}}px;padding-top:{{statusBar-customBar}}px;opacity:{{ opacity== 1 || 2 ?1: 0 }};background:{{ background }}">
+    style="top:{{ capsuleObj.top }}px;opacity:{{ opacity== 1 || 2 ?1: 0 }};background:{{ background }}">
+  <view class="tips" 
+    style="height:{{ capsuleObj.top }}px;top:{{-capsuleObj.top}}px" ></view>
   <view class="left"
     wx:if="{{ left !== 'none'  }}" 
     style="opacity:1" bindtap="goBack">

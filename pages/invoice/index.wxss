@@ -1,6 +1,14 @@
 /* pages/invoice/index.wxss */
 @import '/css/order.wxss';
-
+.order-page .card .card-title.margin-top {
+  margin-top: 15px;
+}
+.order-page .card .card-list .card-item  {
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
 .order-page .card.invoice-card {
   font-size: 16px;
   font-family: PingFangSC-Semibold, PingFang SC;
@@ -47,6 +55,8 @@
 .order-page .card.card-invoice van-field .van-cell {
   padding-left: 0;
   padding-right: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .save-button {

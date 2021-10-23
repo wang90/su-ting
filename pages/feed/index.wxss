@@ -4,6 +4,9 @@ page::after{
 .message {
   padding:  16px 0;
 }
+.message .card.card-bottom {
+  margin-bottom: 30px;
+}
 .message .card .title .van-field__error-message {
   bottom: -25px;
 }

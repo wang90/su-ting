@@ -1,9 +1,17 @@
+page::after {
+  background: #fff;
+}
 .message {
   padding:  16px 0;
 }
 .message .card-input {
   position: relative;
   padding-left: 10px;
+}
+
+.message .card-input.card-textare {
+  padding-top: 10px;
+  background: #fff;
 }
 .message .card-input::before {
   position: absolute;
