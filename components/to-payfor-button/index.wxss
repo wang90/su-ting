@@ -15,7 +15,7 @@
   padding-left: 16px;
   padding-top: 10px;
   padding-right: 16px;
-  padding-bottom: 34px;
+  padding-bottom: 40px;
   box-sizing: border-box;
 }
 .pay-for-button > view {
@@ -90,8 +90,8 @@
   box-shadow: 0px 8px 10px -6px rgba(0, 124, 178, 0.44);
   border-radius: 19px;
   width: 116px;
-  height: 35px;
-  line-height: 35px;
+  height: 36px;
+  line-height: 36px;
   font-size: 16px;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;

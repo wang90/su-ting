@@ -6,6 +6,9 @@ import {  GetSysInfo } from './utils/system.js';
 
 App({
   onLaunch ( options ) {
+    GetLocation().then(res=>{
+      console.log(res);
+    })
     if ( !this.globalData.cityid ) {
       this.setCity({
         city: '三亚',
@@ -42,10 +45,16 @@ App({
     }
 
     GetSysInfo().then((res) => {
-      const { customBar, custom, statusBar } = res;
+      const { customBar, 
+        custom, 
+        statusBar, 
+        capsuleObj, 
+        statusBarHeight } = res;
       this.globalData.statusBar = customBar; //状态栏高度
       this.globalData.custom = custom;
       this.globalData.customBar = statusBar - 20;
+      this.globalData.capsuleObj = capsuleObj;
+      this.globalData.titleHeight = statusBarHeight + capsuleObj.height + (capsuleObj.top - statusBarHeight) * 2;
     }).catch(() => {})
   },
   onShow ( options ) {

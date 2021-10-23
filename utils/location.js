@@ -11,6 +11,7 @@ export function GetLocation( type ='address' ) {
     const myAmapFun = new amapFile.AMapWX({ key: GAODE_KEY });
     myAmapFun.getRegeo({
       success: ( data ) => {
+        console.log(data);
         const __data = data[0];
         const { name, regeocodeData = null } = __data;
         if ( type === 'city') {

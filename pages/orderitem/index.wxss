@@ -2,6 +2,8 @@
 @import '/css/order.wxss';
 .order-page {
   padding-bottom: 100px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .order-status {
   height: 75px;
@@ -128,6 +130,11 @@
 }
 .order-info .order-info-timer > text{
   margin-left:4px;
+}
+.order-page .card,
+.order-page .card-map {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .order-page .card.card-message .msg-date {

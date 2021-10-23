@@ -174,7 +174,7 @@ Page({
           'description': description,
           'comment': comment,
           'furnishArray': furnishArray,
-          'furnishArray1': furnishArray.slice(0,3),
+          'furnishArray1': furnishArray,
           'housePicArray': housPicArray,
           'yajin': yajin,
           'xzxb': xzxb,

@@ -91,7 +91,10 @@
             <text class="des">离开</text>
           </view>
         </view>
-        <view class="date-during">共{{ days }}晚</view>
+        <view class="date-during">
+          <text>共{{ days }}晚</text>
+          <image src="../../assets/more-wirte-icon.png"></image>
+        </view>
       </view>
       <view class="house-date-box date-null" wx:else>
         添加日期
@@ -189,7 +192,7 @@
       </view>
     </view>
   </view>
-  <view class="house-message talk-model">
+  <view class="house-message talk-model" wx:if="{{ comment }}">
     <view class="talk-button"
       data-houseid="{{houseid}}" 
       bindtap="toComment">

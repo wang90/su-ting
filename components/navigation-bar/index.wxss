@@ -5,8 +5,18 @@
   padding-right: 12px;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 24px;
-  box-sizing: border-box;
+  position: relative;
+  /* padding-bottom: 24px; */
+  /* box-sizing: border-box; */
+}
+.header-fixed .tips {
+  position: absolute;
+  content: '';
+  background: #fff;
+  left: 0;
+  right: 0;
+  height:20px;
+  top: 0;
 }
 .header-fixed {
   position: fixed;

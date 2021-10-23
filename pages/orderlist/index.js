@@ -1,6 +1,6 @@
 // pages/message/index.js
 import { GetPendingApi, GetFinished } from '../../apis/index.js';
-import { datedifference } from '../../utils/date.js';
+import { datedifference, toDayStr } from '../../utils/date.js';
 const app = getApp();
 Page({
   data: {
@@ -50,6 +50,8 @@ Page({
         const __list = this.data.pendingList;
         const __listData = listData.map( v => {
           v['__days'] = datedifference( v.rzsj,v.tfsj);
+          v['__rzsj'] = toDayStr( v.rzsj);
+          v['__tfsj'] = toDayStr( v.tfsj);
           return v;
         })
         this.setData({
@@ -67,6 +69,8 @@ Page({
         const __list = this.data.finishedList;
         const __listData = listData.map( v => {
           v['__days'] = datedifference( v.rzsj, v.tfsj);
+          v['__rzsj'] = toDayStr( v.rzsj);
+          v['__tfsj'] = toDayStr( v.tfsj);
           return v;
         })
         this.setData({
@@ -113,9 +117,4 @@ Page({
       this.getPending()
     }
   },
-  duringDate( start, end ) {
-    console.log(start);
-    console.log(end);
-    return 1;
-  }
 })

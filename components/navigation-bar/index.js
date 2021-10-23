@@ -25,6 +25,8 @@ Component({
     this.setData({
       statusBar: statusBar,
       customBar: customBar,
+      titleHeight: app.globalData.titleHeight,
+      capsuleObj: app.globalData.capsuleObj
     })
   },
   data: {},

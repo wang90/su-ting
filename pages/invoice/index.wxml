@@ -65,7 +65,7 @@
             />
           </view>
         </view>
-        <view class="card-title">收票人信息</view>
+        <view class="card-title margin-top">收票人信息</view>
         <view class="card-list">
           <view class="card-item">
             <van-field

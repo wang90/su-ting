@@ -1,6 +1,11 @@
 /* pages/datepage/index.wxss */
+page::after {
+  background-color: #ffffff;
+}
+
 .date-list { 
-  padding: 120px 16px 100px;
+  padding: 130px 16px 100px;
+  background: #fff;
 }
 .calendar {
   --calendar-height: 500px;
@@ -18,12 +23,21 @@
   font-weight: 500  !important;
   color: #333333  !important;
 }
+.van-calendar__header {
+  box-shadow: none !important;
+  position: fixed !important;
+  left: 16px !important;
+  right: 16px !important;
+  background: #fff !important;
+  z-index: 1 !important;
+  top: 190px !important;
+  padding-top: 15px !important;
+}
 .entry-house-box {
   display:flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
-  border-bottom: 1px solid #EFEFEF;
   position: fixed;
   left: 0;
   top: 0;
@@ -32,6 +46,17 @@
   height: 90px;
   z-index: 99;
   padding-top: 85px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.entry-house-box::before {
+  position: absolute;
+  content: '';
+  background: #EFEFEF;
+  bottom:0;
+  height: 1px;
+  left: 16px;
+  right: 16px;
 }
 .entry-house-box .during {
   width: 83px;
@@ -40,7 +65,7 @@
   align-items: center;
 }
 .entry-house-box .during  > view{
-  padding: 3px 12px;
+  padding: 0px 12px;
   font-size: 12px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
@@ -55,7 +80,7 @@
   height: 71px;
   flex: 1;
   text-align: center;
-  background: #F9F9F9;
+  background: rgba(249, 249, 249, 0.6);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -67,6 +92,7 @@
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #666666;
+
 }
 .entry-house-box .date-card .date {
   font-size: 16px;

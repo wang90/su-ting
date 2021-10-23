@@ -38,7 +38,7 @@
    />
    </view>
 
-   <view class="card card-input">
+   <view class="card card-input card-textare">
     <van-field
       class="textare"
       value="{{ message }}"
